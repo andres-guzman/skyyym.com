@@ -1,0 +1,88 @@
+/*
+    author: andres@skyyym.com
+    date: december 2018
+*/
+
+/* fonts
+---------------------------------------------------------------------------*/
+
+@font-face {
+    font-family: 'Proxima';
+    src: url('fonts/proxima/proximanova-bold-webfont.woff2') format('woff2'),
+         url('fonts/proxima/proximanova-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display:swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('fonts/montserrat/montserrat-regular-webfont.woff2') format('woff2'),
+         url('fonts/montserrat/montserrat-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display:swap;
+}
+
+@font-face {
+    font-family: 'Kiro';
+    src: url('kiro_extra_light-webfont.woff2') format('woff2'),
+         url('kiro_extra_light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display:swap;
+}
+
+
+/* normalize
+---------------------------------------------------------------------------*/
+
+html {
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+}
+
+h1 {
+    margin: 0.67em 0;
+}
+
+a {
+    background-color: transparent;
+}
+
+b, strong {
+    font-weight: bolder;
+}
+
+code, kbd, samp {
+    font-family: monospace, monospace;
+    font-size: 1em;
+}
+
+sub, sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+sup {
+    top: -0.5em;
+}
+
+img {
+    border-style: none;
+}
+
+/* main styles
+---------------------------------------------------------------------------*/
+
+
