@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Skyyym - Portfolio of Andres Guzman</title>
+        <title>Portfolio of Andres Guzman — Web designer</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="manifest" href="site.webmanifest">
@@ -13,47 +13,89 @@
         <link rel="stylesheet" href="css/skyyym.css">
     </head>
 
-    <body>
-        <div id="smooth-wrapper">
+    <body onload="init()">
+        <div id="smooth-wrapper" >
             <div class="smooth-container">
                 <main>
                     <nav>
-                        <a id="logo">
-                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 479.2 102.5" style="enable-background:new 0 0 479.2 102.5;" xml:space="preserve">
-                                <path d="M51,1.5c-27.6,0-50,22.4-50,50s22.4,50,50,50s50-22.4,50-50S78.6,1.5,51,1.5z M68.1,63.8l-9.6,5.5l4.1-17.8l-27.4,20 l13.2-30.1l-17.1,7.8l5.1-9.9v2.4l21.3-10.2L47.4,56.3l23.5-16.8L64.6,64L68.1,63.8z" />
-                                <g>
-                                    <path d="M127.4,74.4l9.1-13c4.8,4.7,12.2,8.5,21.4,8.5c5.8,0,9.4-1.9,9.4-5.1c0-8.5-37.7-1.5-37.7-26.4c0-10.9,9.4-20.5,26.5-20.5 c10.7,0,20,3.1,27.1,9l-9.4,12.5c-5.6-4.6-12.9-6.8-19.5-6.8c-5,0-7.2,1.6-7.2,4.5c0,7.9,37.7,1.9,37.7,26c0,13-9.9,21.6-27.8,21.6 C143.5,84.7,134.1,80.5,127.4,74.4z" />
-                                    <path d="M218.7,83.5l-10.6-16.6l-4.6,5.3v11.2h-15.4V18.9h15.4v36.5l14.7-18.7h18.6L219,58l18.7,25.5H218.7z" />
-                                    <path d="M244.8,88.4c1.1,0.6,2.6,0.9,3.8,0.9c3.5,0,5.7-0.7,6.6-2.6l1.1-2.5L237,36.7h16.2l11,29.7l10.9-29.7h16.3l-21.8,53.5 c-3.9,9.9-11.1,12.1-20.4,12.3c-1.4,0-5-0.3-6.6-0.8L244.8,88.4z" />
-                                    <path d="M299.8,88.4c1.1,0.6,2.6,0.9,3.8,0.9c3.5,0,5.7-0.7,6.6-2.6l1.1-2.5L292,36.7h16.2l11,29.7l10.9-29.7h16.3l-21.8,53.5 c-3.9,9.9-11.1,12.1-20.4,12.3c-1.4,0-5-0.3-6.6-0.8L299.8,88.4z" />
-                                    <path d="M354.9,88.4c1.1,0.6,2.6,0.9,3.8,0.9c3.5,0,5.7-0.7,6.6-2.6l1.1-2.5l-19.3-47.5h16.2l11,29.7l10.9-29.7h16.3l-21.8,53.5 c-3.9,9.9-11.1,12.1-20.4,12.3c-1.4,0-5-0.3-6.6-0.8L354.9,88.4z" />
-                                    <path d="M463.7,83.5V55c0-3.6-1.8-6.3-6.4-6.3c-4.2,0-7.2,2.6-8.7,4.6v30.2h-15.4V55c0-3.6-1.7-6.3-6.3-6.3c-4.2,0-7.1,2.6-8.7,4.6 v30.2h-15.4V36.7h15.4v5.7c2.1-2.7,8.3-6.9,15.9-6.9c7,0,11.7,2.8,13.7,8.3c2.8-4.1,9.1-8.3,16.7-8.3c8.9,0,14.5,4.5,14.5,14.1 v33.9H463.7z" />
-                                </g>
-                            </svg>
-                        </a>
+                        <div id="nav-title">
+                            <a href="./" id="nav-logo">
+                                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 479.2 102.5" style="enable-background:new 0 0 479.2 102.5;" xml:space="preserve">
+                                    <path class="logo-fill" d="M51,1.5c-27.6,0-50,22.4-50,50s22.4,50,50,50s50-22.4,50-50S78.6,1.5,51,1.5z M68.1,63.8l-9.6,5.5l4.1-17.8l-27.4,20 l13.2-30.1l-17.1,7.8l5.1-9.9v2.4l21.3-10.2L47.4,56.3l23.5-16.8L64.6,64L68.1,63.8z" />
+                                    <g>
+                                        <path class="logo-fill" d="M127.4,74.4l9.1-13c4.8,4.7,12.2,8.5,21.4,8.5c5.8,0,9.4-1.9,9.4-5.1c0-8.5-37.7-1.5-37.7-26.4c0-10.9,9.4-20.5,26.5-20.5 c10.7,0,20,3.1,27.1,9l-9.4,12.5c-5.6-4.6-12.9-6.8-19.5-6.8c-5,0-7.2,1.6-7.2,4.5c0,7.9,37.7,1.9,37.7,26c0,13-9.9,21.6-27.8,21.6 C143.5,84.7,134.1,80.5,127.4,74.4z" />
+                                        <path class="logo-fill" d="M218.7,83.5l-10.6-16.6l-4.6,5.3v11.2h-15.4V18.9h15.4v36.5l14.7-18.7h18.6L219,58l18.7,25.5H218.7z" />
+                                        <path class="logo-fill" d="M244.8,88.4c1.1,0.6,2.6,0.9,3.8,0.9c3.5,0,5.7-0.7,6.6-2.6l1.1-2.5L237,36.7h16.2l11,29.7l10.9-29.7h16.3l-21.8,53.5 c-3.9,9.9-11.1,12.1-20.4,12.3c-1.4,0-5-0.3-6.6-0.8L244.8,88.4z" />
+                                        <path class="logo-fill" d="M299.8,88.4c1.1,0.6,2.6,0.9,3.8,0.9c3.5,0,5.7-0.7,6.6-2.6l1.1-2.5L292,36.7h16.2l11,29.7l10.9-29.7h16.3l-21.8,53.5 c-3.9,9.9-11.1,12.1-20.4,12.3c-1.4,0-5-0.3-6.6-0.8L299.8,88.4z" />
+                                        <path class="logo-fill" d="M354.9,88.4c1.1,0.6,2.6,0.9,3.8,0.9c3.5,0,5.7-0.7,6.6-2.6l1.1-2.5l-19.3-47.5h16.2l11,29.7l10.9-29.7h16.3l-21.8,53.5 c-3.9,9.9-11.1,12.1-20.4,12.3c-1.4,0-5-0.3-6.6-0.8L354.9,88.4z" />
+                                        <path class="logo-fill" d="M463.7,83.5V55c0-3.6-1.8-6.3-6.4-6.3c-4.2,0-7.2,2.6-8.7,4.6v30.2h-15.4V55c0-3.6-1.7-6.3-6.3-6.3c-4.2,0-7.1,2.6-8.7,4.6 v30.2h-15.4V36.7h15.4v5.7c2.1-2.7,8.3-6.9,15.9-6.9c7,0,11.7,2.8,13.7,8.3c2.8-4.1,9.1-8.3,16.7-8.3c8.9,0,14.5,4.5,14.5,14.1 v33.9H463.7z" />
+                                    </g>
+                                </svg>
+                            </a>
+                        </div>
                         
-                        <a id="blog" href="blog/">
-                            Blog
-                            <span>Good reads about design, web development and more.</span>
-                            <span>1</span>
-                        </a>
-
-                        <a id="about" href="about/">
-                            About
-                            <span>This covers a lot of info about the creator of this website.</span>
-                            <span>2</span>
-                        </a>
-
-                        <a id="about" href="about/">
-                            Contact
-                            <span>Last but not least, ways to get in touch with me.</span>
-                            <span>3</span>
-                        </a>
+                        <div id="nav-links">
+                            <a id="nav-blog" class="nav-links-style" href="blog/">
+                                <span class="nav-label">Blog</span>
+                                <span class="nav-caption">Good reads about design, web development and more.</span>
+                                <span class="nav-number">1</span>
+                            </a>
+                        
+                            <a id="nav-about" class="nav-links-style" href="about/">
+                                <span class="nav-label">About</span>
+                                <span class="nav-caption">This covers a lot of info about the creator of this website.</span>
+                                <span class="nav-number">2</span>
+                            </a>
+                        
+                            <a id="nav-about" class="nav-links-style" href="about/">
+                                <span class="nav-label">Contact</span>
+                                <span class="nav-caption">Last but not least, ways to get in touch with me.</span>
+                                <span class="nav-number">3</span>
+                            </a>
+                        </div>
                     </nav>
 
                     <section id="intro">
                         <h1>Andres guzman  —  Freelance Web Designer</h1>
                         <p>Thank you for visiting. I desing web interfaces and write the code to make them work.</p>
+                    </section>
+                    
+                    <section id="projects">
+                        <h1>Recent / New designs</h1>
+
+                        <div id="projects-outer">
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <span class="project-name">
+                                            Facebook Login
+                                            <span class="project-category">Web design</span>
+                                        </span>
+                                        <img alt="Test" src="projects/test/thumb.jpg">
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#">
+                                        <span class="project-name">
+                                            Facebook Login
+                                            <span class="project-category">Web design</span>
+                                        </span>
+                                        <img alt="Test" src="projects/test/thumb.jpg">
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#">
+                                        <span class="project-name">
+                                            Facebook Login
+                                            <span class="project-category">Web design</span>
+                                        </span>
+                                        <img alt="Test" src="projects/test/thumb.jpg">
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </section>
                 </main>
             </div>

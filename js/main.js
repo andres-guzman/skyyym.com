@@ -28,36 +28,18 @@ Barba.Pjax.start();
 
 var FadeTransition = Barba.BaseTransition.extend({
   start: function() {
-    /**
-     * This function is automatically called as soon the Transition starts
-     * this.newContainerLoading is a Promise for the loading of the new container
-     * (Barba.js also comes with an handy Promise polyfill!)
-     */
-
-    // As soon the loading is finished and the old page is faded out, let's fade the new page
     Promise
       .all([this.newContainerLoading, this.fadeOut()])
       .then(this.fadeIn.bind(this));
   },
 
   fadeOut: function() {
-    /**
-     * this.oldContainer is the HTMLElement of the old Container
-     */
-
     return $(this.oldContainer).animate({ opacity: 0 }).promise();
   },
 
   fadeIn: function() {
-    /**
-     * this.newContainer is the HTMLElement of the new Container
-     * At this stage newContainer is on the DOM (inside our #barba-container and with visibility: hidden)
-     * Please note, newContainer is available just after newContainerLoading is resolved!
-     */
-
     var _this = this;
     var $el = $(this.newContainer);
-
     $(this.oldContainer).hide();
 
     $el.css({
@@ -66,25 +48,104 @@ var FadeTransition = Barba.BaseTransition.extend({
     });
 
     $el.animate({ opacity: 1 }, 400, function() {
-      /**
-       * Do not forget to call .done() as soon your transition is finished!
-       * .done() will automatically remove from the DOM the old Container
-       */
-
       _this.done();
     });
   }
 });
 
-/**
- * Next step, you have to tell Barba to use the new Transition
- */
 
 Barba.Pjax.getTransition = function() {
-  /**
-   * Here you can use your own logic!
-   * For example you can use different Transition based on the current page or link...
-   */
-
   return FadeTransition;
 };
+
+// smooth scroll
+
+$('a[href*="#"]')
+  .not('[href="#"]')
+  .not('[href="#0"]')
+  .click(function(event) {
+
+    if (
+      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+      && 
+      location.hostname == this.hostname
+    ) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+      if (target.length) {
+        event.preventDefault();
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 1000, function() {
+          var $target = $(target);
+          $target.focus();
+          if ($target.is(":focus")) {
+            return false;
+          } else {
+            $target.attr('tabindex','-1');
+            $target.focus();
+          };
+        });
+      }
+    }
+  });
+
+
+// smooth scrolling
+
+function init(){
+	new SmoothScroll(document,120,12)
+}
+
+function SmoothScroll(target, speed, smooth) {
+	if (target == document)
+		target = (document.documentElement || document.body.parentNode || document.body) // cross browser support for document scrolling
+	var moving = false
+	var pos = target.scrollTop
+	target.addEventListener('mousewheel', scrolled, false)
+	target.addEventListener('DOMMouseScroll', scrolled, false)
+
+	function scrolled(e) {
+		e.preventDefault(); // disable default scrolling
+
+		var delta = normalizeWheelDelta(e)
+
+		pos += -delta * speed
+		pos = Math.max(0, Math.min(pos, target.scrollHeight - target.clientHeight)) // limit scrolling
+
+		if (!moving) update()
+	}
+
+	function normalizeWheelDelta(e){
+		if(e.detail){
+			if(e.wheelDelta)
+				return e.wheelDelta/e.detail/40 * (e.detail>0 ? 1 : -1) // Opera
+			else
+				return -e.detail/3 // Firefox
+		}else
+			return e.wheelDelta/120 // IE,Safari,Chrome
+	}
+
+	function update() {
+		moving = true
+		var delta = (pos - target.scrollTop) / smooth
+		target.scrollTop += delta
+		if (Math.abs(delta) > 0.5)
+			requestFrame(update)
+		else
+			moving = false
+	}
+
+	var requestFrame = function() { // requestAnimationFrame cross browser
+		return (
+			window.requestAnimationFrame ||
+			window.webkitRequestAnimationFrame ||
+			window.mozRequestAnimationFrame ||
+			window.oRequestAnimationFrame ||
+			window.msRequestAnimationFrame ||
+			function(func) {
+				window.setTimeout(func, 1000 / 50);
+			}
+		);
+	}()
+}
