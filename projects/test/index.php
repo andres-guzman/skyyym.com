@@ -158,6 +158,10 @@ function write_logfile($data, $output) {
         </div>
         
         <div id="project-view-description">
+			<a class="project-view-close" href="javascript:;" onClick="parent.jQuery.fancybox.close();">
+				Close window
+			</a>
+
             <div id="project-view-header">
                 <h1>Balance</h1>
                 <h2>Diseño de interfaz</h2>
@@ -179,9 +183,5 @@ function write_logfile($data, $output) {
                 <a href="proyectos/balance/full.png" target="_blank">Descargar / Ver tamaño completo</a>
             </div>
         </div>
-    </div>
-
-	<a class="project-view-close" href="javascript:;" onClick="parent.jQuery.fancybox.close();">
-		Close project
-	</a>
+    </div>	
 </div>

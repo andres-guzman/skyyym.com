@@ -471,6 +471,33 @@ footer a:hover {
 }
 
 
+/* project ajax modal
+---------------------------------------------------------------------------*/
+
+#project-view-frame {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+
+#project-view-image {
+    text-align: center;
+    flex: 1;
+    width: 75%;
+    margin-right: 75px;
+}
+
+#project-view-image img {
+    width: 100%;
+}
+
+#project-view-description {
+    background: red;
+    padding-top: 50px;
+    width: 30%;
+    padding-right: 75px;
+}
+
 
 
 /* fancybox
@@ -513,7 +540,7 @@ body.compensate-for-scrollbar {
 
 .fancybox-outer, .fancybox-inner, .fancybox-bg, .fancybox-stage {
     bottom: 0;
-    left: 0;
+    left: 75px;
     position: absolute;
     right: 0;
     top: 0;
@@ -525,7 +552,7 @@ body.compensate-for-scrollbar {
 }
 
 .fancybox-bg {
-    background: #1e1e1e;
+    background: #121217;
     opacity: 0;
     transition-duration: inherit;
     transition-property: opacity;
@@ -533,7 +560,7 @@ body.compensate-for-scrollbar {
 }
 
 .fancybox-is-open .fancybox-bg {
-    opacity: .9;
+    opacity: 1;
     transition-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
@@ -631,17 +658,15 @@ body.compensate-for-scrollbar {
 }
 
 .fancybox-slide--html {
-    padding: 6px;
+    padding: 0;
 }
 
 .fancybox-content {
-    background: #fff;
     display: inline-block;
     margin: 0;
     max-width: 100%;
     overflow: auto;
     -webkit-overflow-scrolling: touch;
-    padding: 44px;
     position: relative;
     text-align: left;
     vertical-align: middle;
@@ -682,10 +707,10 @@ body.compensate-for-scrollbar {
     cursor: zoom-in;
 }
 
+/*
 .fancybox-can-swipe .fancybox-content, .fancybox-can-pan .fancybox-content {
     cursor: -webkit-grab;
-    cursor: grab;
-}
+}*/
 
 .fancybox-is-grabbing .fancybox-content {
     cursor: -webkit-grabbing;
@@ -775,20 +800,7 @@ body.compensate-for-scrollbar {
 /* Buttons */
 
 .fancybox-button {
-    background: rgba(30, 30, 30, 0.6);
-    border: 0;
-    border-radius: 0;
-    box-shadow: none;
-    cursor: pointer;
-    display: inline-block;
-    height: 44px;
-    margin: 0;
-    padding: 10px;
-    position: relative;
-    transition: color .2s;
-    vertical-align: top;
-    visibility: inherit;
-    width: 44px;
+    display: none;
 }
 
 .fancybox-button, .fancybox-button:visited, .fancybox-button:link {
