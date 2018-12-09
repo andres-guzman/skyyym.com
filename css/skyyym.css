@@ -24,7 +24,7 @@
 
 @font-face {
     font-family: 'Kiro';
-    src: url('kiro_extra_light-webfont.woff2') format('woff2'), url('kiro_extra_light-webfont.woff') format('woff');
+    src: url('fonts/kiro/kiro_extra_light-webfont.woff2') format('woff2'), url('kiro_extra_light-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -385,6 +385,62 @@ footer a {
 footer a:hover {
     color: #ffffff;
 }
+
+/* about.html
+---------------------------------------------------------------------------*/
+
+#about {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+#about h1 {
+    max-width: 700px;
+    color: #241ccf;
+    font: 120px/110px "Kiro", Arial, Helvetica, sans-serif;
+}
+
+#about-content {
+    max-width: 700px;
+}
+
+#about p {
+    position: relative;
+    color: #ffffff;
+    font: 14px/22px "Montserrat", Arial, Helvetica, sans-serif;
+    margin-bottom: 120px;
+}
+
+#about p.who::before,
+#about p.what::before,
+#about p.free::before,
+#about p.else::before {
+    position: absolute;
+    left: -115px;
+    color: #4a4a50;
+    width: 80px;
+    text-align: right;
+}
+
+#about p.who::before {
+    content: "Who";
+}
+
+#about p.what::before {
+    content: "What I do";
+}
+
+#about p.free::before {
+    content: "Freelance";
+}
+
+#about p.else::before {
+    content: "Elsewhere";
+}
+
+
+
 
 /* fancybox
 ---------------------------------------------------------------------------*/
