@@ -135,6 +135,7 @@ main {
     max-width: 1610px;
     margin: 0 auto;
     padding-top: 50px;
+    transition: all .35s ease 0s;
 }
 
 /* navigation
@@ -436,7 +437,7 @@ footer a:hover {
     position: relative;
     color: #ffffff;
     font: 14px/22px "Montserrat", Arial, Helvetica, sans-serif;
-    margin-bottom: 120px;
+    margin-bottom: 90px;
 }
 
 #about p.who::before,
@@ -483,8 +484,9 @@ footer a:hover {
 #project-view-image {
     text-align: center;
     flex: 1;
-    width: 75%;
     margin-right: 75px;
+    padding-top: 75px;
+    padding-bottom: 75px;
 }
 
 #project-view-image img {
@@ -493,7 +495,7 @@ footer a:hover {
 
 #project-view-description {
     background: red;
-    padding-top: 50px;
+    padding-top: 75px;
     width: 30%;
     padding-right: 75px;
 }
@@ -1374,9 +1376,10 @@ body.compensate-for-scrollbar {
 /* media queries
 ---------------------------------------------------------------------------*/
 
-@media screen and (max-width: 1660px) {
-    body {
-        padding: 0 65px 0 130px;
+@media screen and (max-width: 1770px) {
+    main {
+        padding-right: 75px;
+        padding-left: 75px;
     }
 }
 
@@ -1390,15 +1393,25 @@ body.compensate-for-scrollbar {
     #nav-logo {
         width: 200px;
     }
+
+    /* about */
+    #about {
+        align-items: flex-start;
+    }
+
+    #about p.who::before,
+    #about p.what::before,
+    #about p.free::before,
+    #about p.else::before {
+        top: -22px;
+        left: 0;
+        text-align: left;
+    }
 }
 
-@media screen and (max-width: 895px) {
-    body {
-        padding-left: 90px;
-        padding-right: 45px;
-    }
-    nav {
-        align-items: center;
+@media screen and (max-width: 925px) {
+    main {
+        padding: 50px 35px 0 0;
     }
     #nav-links {
         display: flex;
@@ -1407,20 +1420,34 @@ body.compensate-for-scrollbar {
     #nav-links a {
         margin-right: 0;
     }
+    .nav-links-style {
+        margin-right: 0;
+    }
+    .nav-label {
+        font-size: 14px;
+    }
+    .nav-caption {
+        font-size: 13px;
+    }
     aside {
-        width: 45px;
+        width: 35px;
     }
     #copyright-text {
-        left: -229px;
+        left: -235px;
     }
     #intro {
         min-height: 45vh;
         text-align: center;
     }
+    #intro h1 {
+        font-size: 14px;
+        margin-bottom: 6px;
+    }
     #intro p {
         max-width: 100%;
         font-size: 14px;
         line-height: 18px;
+        margin-bottom: 6px; 
     }
     #intro-go-down {
         margin: 0 auto;
@@ -1431,5 +1458,40 @@ body.compensate-for-scrollbar {
     }
     #projects-holder li:nth-child(2n+1) {
         margin-right: 0;
+    }
+    #projects h1 {
+        font-size: 14px;
+    }
+    footer a {
+        font-size: 14px;
+    }
+    /* about */
+    #about h1 {
+        width: 100%;
+        font-size: 32px;
+        line-height: unset;
+        padding: 68px 0 68px 0;
+    }
+    #about p {
+        margin-bottom: 68px;
+    }
+
+    /* project view */
+    .fancybox-outer, .fancybox-inner, .fancybox-bg, .fancybox-stage {
+        left: 0;
+    }
+
+    #project-view-image {
+        padding: 35px;
+        margin-right: 0;
+    }
+
+    #project-view-frame {
+        flex-direction: column;
+    }
+    
+    #project-view-description {
+        width: 100%;
+        padding: 35px;
     }
 }
