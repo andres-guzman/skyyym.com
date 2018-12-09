@@ -47,7 +47,7 @@ var FadeTransition = Barba.BaseTransition.extend({
       opacity : 0
     });
 
-    $el.animate({ opacity: 1 }, 400, function() {
+    $el.animate({ opacity: 1 }, 650, function() {
       _this.done();
     });
   }
@@ -107,3 +107,25 @@ $('a[href*="#"]')
 $('[data-fancybox="gallery"]').fancybox({
   // Options
 });
+
+// smooth scrolling
+
+
+
+// remove hash
+
+function removeLocationHash(){
+  var noHashURL = window.location.href.replace(/#.*$/, '');
+  window.history.replaceState('', document.title, noHashURL) 
+}
+window.addEventListener("popstate", function(event){
+  removeLocationHash();
+});
+window.addEventListener("hashchange", function(event){
+  event.preventDefault();
+  removeLocationHash();
+});
+window.addEventListener("load", function(){
+  removeLocationHash();
+});
+

@@ -84,6 +84,7 @@ html {
     -webkit-text-size-adjust: 100%;
 }
 
+
 body {
     position: relative;
     margin: 0;
@@ -91,6 +92,7 @@ body {
     box-sizing: border-box;
     padding-left: 75px;
     transition: padding .55s ease 0s;
+    scroll-behavior: smooth;
 }
 
 /* aside (left white column)
@@ -148,11 +150,33 @@ nav {
 }
 
 #nav-logo {
+    position: relative;
     width: 365px;
     display: block;
     border-top: 1px solid #2f2f33;
     padding-top: 30px;
+    transform: perspective(1px) translateZ(0);
     transition: all .55s ease 0s;
+}
+
+#nav-logo::before {
+	content: "";
+	position: absolute;
+	z-index: -1;
+	left: 0;
+	right: 100%;
+	top: -1px;
+	background: #ffffff;
+    height: 1px;
+	transition-property: right;
+	transition-duration: 0.45s;
+	transition-timing-function: cubic-bezier(.46, .03, .52, .96);
+}
+
+#nav-logo:hover::before,
+#nav-logo:focus::before,
+#nav-logo:active::before {
+    right: 0;
 }
 
 #nav-logo>svg {
@@ -193,7 +217,9 @@ nav {
     transition-timing-function: cubic-bezier(.46, .03, .52, .96);
 }
 
-.nav-links-style:hover:before, .nav-links-style:focus:before, .nav-links-style:active:before {
+.nav-links-style:hover::before,
+.nav-links-style:focus::before,
+.nav-links-style:active::before {
     right: 0;
 }
 
@@ -227,7 +253,7 @@ nav {
 
 #intro {
     display: flex;
-    min-height: 85vh;
+    min-height: 55vh;
     flex-direction: column;
     justify-content: center;
     transition: all .55s ease 0s;
@@ -393,6 +419,7 @@ footer a:hover {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    padding-bottom: 120px;
 }
 
 #about h1 {
@@ -437,6 +464,10 @@ footer a:hover {
 
 #about p.else::before {
     content: "Elsewhere";
+}
+
+#about-content img {
+    clip-path: circle(74px at center);
 }
 
 
