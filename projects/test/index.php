@@ -3,7 +3,7 @@ $lf_name = "views.txt";
 $monthly = 0;
 $monthly_path = "oldfiles";
 $type = 0;
-$beforeTotalText = "Vistas: ";
+$beforeTotalText = "Views: ";
 $beforeUniqueText = "Unique Visits: ";
 $display = 1;
 $separator = "<br \>";
@@ -162,17 +162,10 @@ function write_logfile($data, $output) {
 				Close window
 			</a>
 
-            <div id="project-view-header">
-                <h1>Balance</h1>
-                <h2>Diseño de interfaz</h2>
-            </div>
+            <h1 class="project-view-title">Test project</h1>
 
-            <div id="project-view-text">
+            <div id="project-view-caption">
                 Hice este pequeño diseño para la tarea ficticia de crear tareas para una tineda que ofrece servicios de impresión.
-            </div>
-
-            <div id="project-view-date">
-                Agosto, 2016
             </div>
 
             <div id="project-view-counter">
@@ -180,7 +173,7 @@ function write_logfile($data, $output) {
             </div>
 
             <div id="project-view-download">
-                <a href="proyectos/balance/full.png" target="_blank">Descargar / Ver tamaño completo</a>
+                <a href="projects/test/full.jpg" target="_blank">Download \ Full size</a>
             </div>
         </div>
     </div>	

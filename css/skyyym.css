@@ -449,6 +449,16 @@ footer a:hover {
     margin-bottom: 90px;
 }
 
+#about p a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color .35s ease 0s;
+}
+
+#about p a:hover {
+    color: #241ccf;
+}
+
 #about p.who::before,
 #about p.what::before,
 #about p.free::before,
@@ -641,6 +651,11 @@ footer a:hover {
     display: block;
 }
 
+#blog-nav-previous:hover .blog-nav-previous-entry,
+#blog-nav-next:hover .blog-nav-next-entry {
+    color: #ffffff;
+}
+
 .blog-nav-previous-title,
 .blog-nav-next-title {
     display: block;
@@ -660,6 +675,7 @@ footer a:hover {
 .blog-nav-next-entry {
     color: #4a4a50;
     font: 14px "Montserrat", Arial, Helvetica, sans-serif;
+    transition: color .35s ease 0s;
 }
 
 #blog-entry-first {
@@ -739,12 +755,60 @@ footer a:hover {
 }
 
 #project-view-description {
-    background: red;
     padding-top: 75px;
     width: 30%;
     padding-right: 75px;
 }
 
+.project-view-close {
+    color: #ffffff;
+    font: 16px "Proxima", Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin-bottom: 68px;
+    display: block;
+    text-align: right;
+}
+
+.project-view-close::after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.project-view-title {
+    color: #ffffff;
+    font: 16px "Proxima", Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    border-top: 1px solid #2f2f33;
+    padding-top: 20px;
+    margin-bottom: 20px;
+}
+
+#project-view-caption {
+    color: #ffffff;
+    font: 11px "Proxima", Arial, Helvetica, sans-serif;
+    text-transform: uppercase;   
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #2f2f33;
+}
+
+#project-view-counter {
+    color: #ffffff;
+    font: 11px "Proxima", Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+}
+
+#project-view-download a {
+    color: #2f2f33;
+    font: 11px "Proxima", Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    background-color: #ffffff;
+    padding: 12px 22px;
+    text-decoration: none;
+}
 
 
 /* fancybox
@@ -1716,6 +1780,9 @@ body.compensate-for-scrollbar {
     }
     #projects h1 {
         font-size: 14px;
+    }
+    .project-view-close {
+        text-align: center;
     }
     footer a {
         font-size: 14px;
