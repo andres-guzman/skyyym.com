@@ -819,9 +819,7 @@ nav {
 
 /* fancybox
 ---------------------------------------------------------------------------*/
-.fancybox-infobar {
-    display: none;
-}
+
 
 body.compensate-for-scrollbar {
     overflow: hidden;
@@ -1267,6 +1265,10 @@ body.compensate-for-scrollbar {
     top: 50%;
     width: 25px;
     z-index: 99999;
+}
+
+.fancybox-infobar {
+    display: none;
 }
 
 @-webkit-keyframes fancybox-rotate {
