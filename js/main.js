@@ -108,10 +108,6 @@ $('[data-fancybox="gallery"]').fancybox({
   // Options
 });
 
-// smooth scrolling
-
-
-
 // remove hash
 
 function removeLocationHash(){
