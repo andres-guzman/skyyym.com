@@ -133,7 +133,7 @@ aside:hover #copyright-text {
 
 main {
     max-width: 1610px;
-    margin: 0 auto;
+    margin: 0 auto 120px auto;
     padding-top: 50px;
     transition: all .35s ease 0s;
 }
@@ -292,7 +292,7 @@ nav {
 ---------------------------------------------------------------------------*/
 
 #projects {
-    margin-bottom: 14px;
+    margin-bottom: 120px;
 }
 
 #projects h1 {
@@ -396,27 +396,33 @@ nav {
     text-transform: uppercase;
 }
 
-/* footer
+/* footer index
 ---------------------------------------------------------------------------*/
-/*
-footer {
-    padding-bottom: 68px;
-    padding-top: 15px;
-    border-top: 1px solid #4a4a50;
+
+#footer-index,
+#footer-blog {
+    position: relative;
 }
 
-footer a {
-    color: #4a4a50;
+#footer-index::before,
+#footer-blog::before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: 0;
+    height: 1px;
+    width: 100%;
+    background-color: #2f2f33;
+}
+
+#footer-index a,
+#footer-blog a {
+    color: #ffffff;
     font: 12px "Proxima", Arial, Helvetica, sans-serif;
     text-transform: uppercase;
-    transition: color .35s ease 0s;
     text-decoration: none;
 }
 
-footer a:hover {
-    color: #ffffff;
-}
-*/
 
 /* about.html
 ---------------------------------------------------------------------------*/
