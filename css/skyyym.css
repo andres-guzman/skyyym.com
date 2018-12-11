@@ -751,7 +751,7 @@ nav {
 #project-view-image {
     text-align: center;
     flex: 1;
-    margin-right: 75px;
+    margin-right: 150px;
     padding-top: 75px;
     padding-bottom: 75px;
 }
@@ -763,7 +763,7 @@ nav {
 #project-view-description {
     padding-top: 75px;
     width: 30%;
-    padding-right: 75px;
+    padding-right: 150px;
 }
 
 .project-view-close {
