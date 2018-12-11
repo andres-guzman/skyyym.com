@@ -819,6 +819,9 @@ nav {
 
 /* fancybox
 ---------------------------------------------------------------------------*/
+.fancybox-infobar {
+    display: none;
+}
 
 body.compensate-for-scrollbar {
     overflow: hidden;
