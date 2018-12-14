@@ -774,6 +774,11 @@ nav {
     margin-bottom: 68px;
     display: block;
     text-align: right;
+    transition: color .35s ease 0s;
+}
+
+.project-view-close:hover {
+    color: #241ccf;
 }
 
 .project-view-close::after {
