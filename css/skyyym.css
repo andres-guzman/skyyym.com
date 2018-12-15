@@ -625,6 +625,16 @@ nav {
     margin-bottom: 50px;
 }
 
+#blog-entry p a {
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: underline;
+    transition: color .35s ease 0s;
+}
+
+#blog-entry p a:hover {
+    color: rgba(255, 255, 255, 1);
+}
+
 #blog-entry h2 {
     color: #ffffff;
     font: 18px "Proxima", Arial, Helvetica, sans-serif;;
