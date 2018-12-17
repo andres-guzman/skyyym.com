@@ -39,6 +39,7 @@ var FadeTransition = Barba.BaseTransition.extend({
   },
 
   fadeIn: function() {
+    $(window).scrollTop(0);
     var _this = this;
     var $el = $(this.newContainer);
     $(this.oldContainer).hide();
