@@ -98,14 +98,41 @@ body {
 /* aside (left white column)
 ---------------------------------------------------------------------------*/
 
+@keyframes introGrow {
+	0% {
+        width: 100vw;
+  }
+
+	100% {
+        width: 75px; 
+  }
+}
+
+@keyframes fadeIn {
+	0% {
+        opacity: 0;
+  }
+
+	100% {
+        opacity: 1;
+  }
+}
+
 aside {
     position: fixed;
-    width: 75px;
+    width: 100vw;
     min-height: 100vh;
     top: 0;
     left: 0;
-    background-color: rgba(255, 255, 255, .90);
+    background-color: rgba(255, 255, 255, 1);
     transition: all .55s ease 0s;
+    animation-name: introGrow;
+    animation-delay: 1s;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(.65,.05,.36,1);
+    z-index: 999;
+
 }
 
 aside:hover {
@@ -125,7 +152,12 @@ aside:hover #copyright-text {
     width: 505px;
     top: 72px;
     left: -215px;
+    opacity: 0;
     transition: all .35s ease 0s;
+    animation-name: fadeIn;
+    animation-fill-mode: forwards;
+    animation-delay: 2s;
+    animation-duration: 1s;
 }
 
 /* main

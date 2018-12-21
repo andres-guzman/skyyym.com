@@ -126,3 +126,4 @@ window.addEventListener("load", function(){
   removeLocationHash();
 });
 
+// reveal on scroll
