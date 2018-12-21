@@ -321,11 +321,7 @@ nav {
 
 #projects-holder li {
     margin-bottom: 6px;
-    max-width: calc(50% - 3px);
-}
-
-#projects-holder li:nth-child(odd) {
-    margin-right: 6px;
+    max-width: 100%;
 }
 
 #projects-holder li:last-of-type {
@@ -339,7 +335,6 @@ nav {
 }
 
 #projects-holder li {
-    float: left;
     list-style: none;
 }
 
@@ -350,9 +345,9 @@ nav {
     cursor: zoom-in;
 }
 
-.project-window:hover img {
+/*.project-window:hover img {
     transform: scale(1.2);
-}
+}*/
 
 .project-window:hover .project-name {
     opacity: 1;
@@ -361,8 +356,6 @@ nav {
 .project-window img {
     vertical-align: top;
     width: 100%;
-    transform: scale(1);
-    transition: transform .55s ease;
 }
 
 .project-name {
@@ -387,7 +380,7 @@ nav {
     color: #121217;
     font: 18px "Montserrat", Arial, Helvetica, sans-serif;
     text-transform: uppercase;
-    margin-bottom: 6px;
+    margin-bottom: 9px;
 }
 
 .project-category {
