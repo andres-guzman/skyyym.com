@@ -152,16 +152,10 @@ function write_logfile($data, $output) {
 ?>
 
 <div id="project-view-modal">
-    <div id="project-view-frame">
-        <div id="project-view-image">
-            <img src="projects/test/full.jpg" />
-        </div>
-        
-        <div id="project-view-description">
-			<a class="project-view-close" href="javascript:;" onClick="parent.jQuery.fancybox.close();">
-				Close window
-			</a>
+	<a class="project-view-close" href="javascript:;" onClick="parent.jQuery.fancybox.close();">Close window</a>	
 
+    <div id="project-view-frame">			
+        <div id="project-view-description">			
             <h1 class="project-view-title">Test project</h1>
 
             <div id="project-view-caption">
@@ -175,6 +169,10 @@ function write_logfile($data, $output) {
             <div id="project-view-download">
                 <a href="projects/test/full.jpg" target="_blank">Download \ Full size</a>
             </div>
+		</div>
+		
+		<div id="project-view-image">
+            <img src="projects/test/full.jpg" />
         </div>
     </div>	
 </div>

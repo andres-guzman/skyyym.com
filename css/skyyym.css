@@ -131,7 +131,7 @@ aside {
     animation-duration: 1s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(.65,.05,.36,1);
-    z-index: 999;
+    z-index: 9999;
 
 }
 
@@ -777,18 +777,25 @@ nav {
 /* project ajax modal
 ---------------------------------------------------------------------------*/
 
+#project-view-modal {
+    padding-top: 60px;
+}
+
 #project-view-frame {
     position: relative;
     display: flex;
     flex-direction: row;
+    background: #ffffff;
+    max-width: 1510px;
+    margin: 0 auto;
 }
 
 #project-view-image {
     text-align: center;
     flex: 1;
-    margin-right: 150px;
-    padding-top: 75px;
-    padding-bottom: 75px;
+    padding-right: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 #project-view-image img {
@@ -796,9 +803,9 @@ nav {
 }
 
 #project-view-description {
-    padding-top: 75px;
-    width: 30%;
-    padding-right: 150px;
+    width: 500px;
+    padding: 100px 100px 0 100px;
+    box-sizing: border-box;
 }
 
 .project-view-close {
@@ -806,9 +813,9 @@ nav {
     font: 16px "Proxima", Arial, Helvetica, sans-serif;
     text-transform: uppercase;
     text-decoration: none;
-    margin-bottom: 68px;
+    margin-bottom: 60px;
     display: block;
-    text-align: right;
+    text-align: center;
     transition: color .35s ease 0s;
 }
 
@@ -823,35 +830,31 @@ nav {
 }
 
 .project-view-title {
-    color: #ffffff;
+    color: #121217;
     font: 16px "Proxima", Arial, Helvetica, sans-serif;
     text-transform: uppercase;
-    border-top: 1px solid #2f2f33;
-    padding-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 0;
+    margin-bottom: 40px;
 }
 
 #project-view-caption {
-    color: #ffffff;
-    font: 11px "Proxima", Arial, Helvetica, sans-serif;
-    text-transform: uppercase;   
-    margin-bottom: 20px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #2f2f33;
+    color: #121217;
+    font: 12px "Montserrat", Arial, Helvetica, sans-serif; 
+    margin-bottom: 40px;
 }
 
 #project-view-counter {
-    color: #ffffff;
+    color: #121217;
     font: 11px "Proxima", Arial, Helvetica, sans-serif;
     text-transform: uppercase;
-    margin-bottom: 24px;
+    margin-bottom: 44px;
 }
 
 #project-view-download a {
     color: #2f2f33;
     font: 11px "Proxima", Arial, Helvetica, sans-serif;
     text-transform: uppercase;
-    background-color: #ffffff;
+    border: 1px solid #121217;
     padding: 12px 22px;
     text-decoration: none;
 }
@@ -898,7 +901,7 @@ body.compensate-for-scrollbar {
 
 .fancybox-outer, .fancybox-inner, .fancybox-bg, .fancybox-stage {
     bottom: 0;
-    left: 75px;
+    left: 0;
     position: absolute;
     right: 0;
     top: 0;
