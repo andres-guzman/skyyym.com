@@ -315,7 +315,7 @@ nav {
 
 #intro {
     display: flex;
-    min-height: 80vh;
+    min-height: 50vh;
     flex-direction: column;
     justify-content: center;
     transition: all .55s ease 0s;
