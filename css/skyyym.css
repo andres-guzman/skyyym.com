@@ -315,7 +315,7 @@ nav {
 
 #intro {
     display: flex;
-    min-height: 55vh;
+    min-height: 60vh;
     flex-direction: column;
     justify-content: center;
     transition: all .55s ease 0s;
@@ -459,7 +459,6 @@ nav {
 
 
 
-
 /* footer index
 ---------------------------------------------------------------------------*/
 
@@ -495,7 +494,7 @@ nav {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    padding-bottom: 120px;
+    padding-bottom: 60px;
 }
 
 #about h1 {
@@ -775,7 +774,7 @@ nav {
 	display: flex;
 	flex-direction: column;
 	align-items: flex-end;
-	padding-bottom: 120px;
+	padding-bottom: 60px;
 }
 
 #contact h1 {
