@@ -817,7 +817,7 @@ nav {
 ---------------------------------------------------------------------------*/
 
 #project-view-modal {
-    padding-top: 60px;
+    padding-top: 75px;
 }
 
 #project-view-frame {
@@ -852,7 +852,7 @@ nav {
     font: 16px "Proxima", Arial, Helvetica, sans-serif;
     text-transform: uppercase;
     text-decoration: none;
-    margin-bottom: 60px;
+    margin-bottom: 75px;
     display: block;
     text-align: center;
     transition: color .35s ease 0s;
