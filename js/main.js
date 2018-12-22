@@ -49,7 +49,7 @@ var FadeTransition = Barba.BaseTransition.extend({
       opacity : 0
     });
 
-    $el.animate({ opacity: 1 }, 650, function() {
+    $el.animate({ opacity: 1 }, 750, function() {
       _this.done();
     });
   }
