@@ -315,7 +315,7 @@ nav {
 
 #intro {
     display: flex;
-    min-height: 50vh;
+    min-height: 55vh;
     flex-direction: column;
     justify-content: center;
     transition: all .55s ease 0s;
@@ -400,7 +400,6 @@ nav {
     position: relative;
     overflow: hidden;
     display: flex;
-    background-color: red;
     text-decoration: none;
 }
 
@@ -438,14 +437,14 @@ nav {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.75);
+    background-color: rgba(0, 0, 0, 0.85);
     opacity: 0;
     display: flex;
     text-align: center;
     justify-content: center;
     flex-direction: column;
     transition: opacity .55s ease;
-    color: #000000;
+    color: #ffffff;
     font: 12px "Proxima", Arial, Helvetica, sans-serif;
     text-transform: uppercase;
 }
