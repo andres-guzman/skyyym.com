@@ -1532,7 +1532,6 @@ body.compensate-for-scrollbar {
 /* media queries
 ---------------------------------------------------------------------------*/
 
-
 @media screen and (min-width: 1770px) {
     #blog-entry-holder li:nth-child(3n) {
         margin-right: 0;
@@ -1579,6 +1578,17 @@ body.compensate-for-scrollbar {
 }
 
 @media screen and (max-width: 925px) {
+    
+    @keyframes introGrow {
+        0% {
+            width: 100vw;
+      }
+    
+        100% {
+            width: 35px; 
+      }
+    }
+    
     main {
         padding: 50px 35px 0 0;
     }
