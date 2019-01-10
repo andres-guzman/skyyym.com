@@ -1578,8 +1578,8 @@ body.compensate-for-scrollbar {
 }
 
 @media screen and (max-width: 925px) {
-    
-    @keyframes introGrow {
+
+    @keyframes introGrow_35 {
         0% {
             width: 100vw;
       }
@@ -1610,6 +1610,11 @@ body.compensate-for-scrollbar {
     }
     aside {
         width: 35px;
+        animation-name: introGrow_35;
+	    animation-delay: 1s;
+	    animation-duration: 1s;
+	    animation-fill-mode: forwards;
+	    animation-timing-function: cubic-bezier(.65,.05,.36,1);
     }
     #copyright-text {
         left: -235px;
