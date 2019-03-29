@@ -410,19 +410,19 @@ nav {
     justify-content: center;
     padding: 50px;
     box-sizing: border-box;
-    background-color: #17181a;
+    background-color: #ffffff;
 }
 
 
 .project-title {
-    color: #ffffff;
+    color: #121217;
     font: 18px "Montserrat", Arial, Helvetica, sans-serif;
     text-transform: uppercase;
     margin-bottom: 10px;
 }
 
 .project-category {
-    color: #ffffff;
+    color: #121217;
     font: 12px "Proxima", Arial, Helvetica, sans-serif;
     text-transform: uppercase;
 }
