@@ -3,3 +3,123 @@
     March, 2021
 */
 
+
+/* ==========================================================================
+   Fonts
+   ========================================================================== */
+
+
+
+@font-face {
+    font-family: 'Halja';
+    src: url('halja-regular-webfont.woff2') format('woff2'),
+         url('halja-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Founders Light';
+    src: url('fonts/FoundersGrotesk-Light.woff2') format('woff2'),
+        url('fonts/FoundersGrotesk-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Founders Semibold';
+    src: url('fonts/FoundersGrotesk-Semibold.woff2') format('woff2'),
+        url('fonts/FoundersGrotesk-Semibold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
+/* ==========================================================================
+   Custom properties
+   ========================================================================== */
+
+
+
+:root {
+    font-size: 16px;
+    --font__huge: 5vw;
+    --font__medium: 1rem;
+    --font__small: 0.75rem;
+    --color__bright: rgba(255, 255, 255, 1);
+    --color__dark: rgba(255, 255, 255, 0.25);
+    --color__red: rgba(255, 8, 65, 1);
+    --margin__bottom--huge: 5vh;
+    --margin__bottom--small: 1vh;
+}
+
+
+
+/* ==========================================================================
+   Basic styles
+   ========================================================================== */
+
+
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    background-color: #1f1f1f;
+    margin: 0;
+}
+
+a {
+    background-color: transparent;
+}
+
+p, 
+h1,
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+ul li {
+    list-style-type: none;
+}
+
+
+
+
+/* ==========================================================================
+   Header and navigation
+   ========================================================================== */
+
+
+
+header {
+    background-color: red;
+}
+
+
+
+
+/* ==========================================================================
+   Footer and copyright
+   ========================================================================== */
+
+
+
+
+
+
+
+/* ==========================================================================
+   Main
+   ========================================================================== */
+
+
+
+
