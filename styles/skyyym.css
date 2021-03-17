@@ -43,15 +43,19 @@
 
 
 :root {
-    font-size: 16px;
-    --font__huge: 5vw;
-    --font__medium: 1rem;
-    --font__small: 0.75rem;
+    font-size: 18px;
+    --font__huge: 15vw;
+    --font__medium: 1.333rem;
+    --font__small: 1rem;
+    --font__light: "Founders Light", Arial, Helvetica, sans-serif;
+    --font__bold: "Founders Semibold", Arial, Helvetica, sans-serif;
+    --font__goth: "Halja", Georgia, serif;
     --color__bright: rgba(255, 255, 255, 1);
     --color__dark: rgba(255, 255, 255, 0.25);
     --color__red: rgba(255, 8, 65, 1);
     --margin__bottom--huge: 5vh;
     --margin__bottom--small: 1vh;
+    --transition__medium: all 0.5s cubic-bezier(.25,.46,.45,.94) 0s;
 }
 
 
@@ -75,7 +79,8 @@ a {
 }
 
 p, 
-h1,
+h1, 
+h2,
 ul {
     margin: 0;
     padding: 0;
@@ -83,6 +88,22 @@ ul {
 
 ul li {
     list-style-type: none;
+}
+
+h1 {
+    color: var(--color__bright);
+    font: var(--font__huge) var(--font__goth); 
+    transition: var(--transition__medium);
+}
+
+h2 {
+    color: var(--color__bright);
+    font: var(--font__medium)/1 var(--font__bold);
+}
+
+p {
+    line-height: 24px;
+    transition: var(--transition__medium);
 }
 
 
@@ -94,6 +115,10 @@ ul li {
 
 header {
     padding: 25px 25px 0 25px;
+    position: fixed;
+    width: calc(100% - 50px);
+    mix-blend-mode: difference;
+    z-index: 10;
 }
 
 nav {
@@ -115,6 +140,11 @@ nav {
     text-transform: uppercase;
     text-decoration: none;
     vertical-align: top;
+    transition: var(--transition__medium);
+}
+
+.nav__main li > a:hover {
+    color: var(--color__red);
 }
 
 .nav__main li:last-of-type {
@@ -129,6 +159,12 @@ nav {
 
 .nav__main--logo {
     fill: var(--color__bright);
+    transition: var(--transition__medium);
+    
+}
+
+.nav__logo:hover .nav__main--logo {
+    fill: var(--color__red);
 }
 
 .nav__social {
@@ -145,6 +181,11 @@ nav {
     font: 16px "Founders Light", Arial, Helvetica, sans-serif;
     text-decoration: none;
     vertical-align: top;
+    transition: var(--transition__medium);
+}
+
+.nav__social li a:hover {
+    color: var(--color__red);
 }
 
 .nav__social li:first-of-type {
@@ -153,13 +194,26 @@ nav {
 
 
 
-
 /* ==========================================================================
    Footer and copyright
    ========================================================================== */
 
 
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 25px 25px 25px;
+}
 
+footer div:first-of-type,
+footer div:last-of-type {
+    color: var(--color__dark);
+    font: 0.889rem var(--font__light);
+}
 
 
 
@@ -169,5 +223,84 @@ nav {
    ========================================================================== */
 
 
+main {
+    padding: 0 13.5vw 0 13.5vw;
+    height: 100%;
+}
 
+
+
+/* ==========================================================================
+   Section welcome
+   ========================================================================== */
+
+
+#welcome__screen {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.welcome__star {
+    width: 70px;
+}
+
+.welcome__star--pentagram {
+    fill: var(--color__red);
+}
+
+#welcome__screen h1 {
+    margin-bottom: 6vh;
+}
+
+#welcome__screen p:first-of-type {
+    color: var(--color__bright);
+    font: var(--font__small)/1 var(--font__light);
+    margin-bottom: -3vh;
+}
+
+#welcome__screen p:last-of-type {
+    color: var(--color__dark);
+    font: var(--font__small)/1 var(--font__light);
+}
+
+
+/* ==========================================================================
+   Section works
+   ========================================================================== */
+
+
+#works {
+    text-align: center;
+    padding-top: 15vh;
+}
+
+#works h2 {
+    margin-bottom: 10vh;
+    transition: var(--transition__medium);
+}
+
+#works a {
+    display: inline-block;
+    text-decoration: none;
+    transition: var(--transition__medium);
+}
+
+
+.works__description {
+    color: var(--color__dark);
+    font: var(--font__small) var(--font__light);
+    max-width: 600px;
+    padding-bottom: 8vh;
+    margin: 0 auto;
+    border-bottom: 1px solid var(--color__dark);
+}
+
+
+.works__link:hover .works__title,
+.works__link:hover .works__description {
+    color: var(--color__red);
+}
 
