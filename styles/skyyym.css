@@ -44,7 +44,7 @@
 
 :root {
     font-size: 18px;
-    --font__huge: 15vw;
+    --font__huge: clamp(3.5rem, 15vw, 16rem);
     --font__medium: 1.333rem;
     --font__small: 1rem;
     --font__light: "Founders Light", Arial, Helvetica, sans-serif;
@@ -252,13 +252,13 @@ main {
 }
 
 #welcome__screen h1 {
-    margin-bottom: 6vh;
+    margin-bottom: 5vh;
 }
 
 #welcome__screen p:first-of-type {
     color: var(--color__bright);
     font: var(--font__small)/1 var(--font__light);
-    margin-bottom: -3vh;
+    /*margin-bottom: -3vh;*/
 }
 
 #welcome__screen p:last-of-type {
@@ -293,7 +293,7 @@ main {
     color: var(--color__dark);
     font: var(--font__small) var(--font__light);
     max-width: 600px;
-    padding-bottom: 8vh;
+    padding-bottom: 6vh;
     margin: 0 auto;
     border-bottom: 1px solid var(--color__dark);
 }
