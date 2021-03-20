@@ -133,3 +133,4 @@ const scrollbar = Scrollbar.init(document.querySelector('main'), {
     alwaysShowTracks: false 
 });
 
+// hash removal

@@ -44,17 +44,17 @@
 
 :root {
     font-size: 19px;
-    --font__huge: clamp(3.5rem, 15vw, 16rem);
+    --font__huge: clamp(3.5rem, 15vw, 16rem)/1;
     --font__medium: 1.333rem;
-    --font__small: 1rem;
+    --font__small: 1rem/24px;
     --font__light: "Founders Light", Arial, Helvetica, sans-serif;
     --font__bold: "Founders Semibold", Arial, Helvetica, sans-serif;
     --font__goth: "Halja", Georgia, serif;
     --color__bright: rgba(255, 255, 255, 1);
     --color__dark: rgba(255, 255, 255, 0.35);
     --color__red: #ff0841; /* rgba(255, 8, 65, 1) */
-    --margin__bottom--huge: 5vh;
-    --margin__bottom--small: 7vh;
+    --length__huge: 18vh;
+    --length__small: 9vh;
     --transition__medium: all 0.5s cubic-bezier(.25,.46,.45,.94) 0s;
 }
 
@@ -126,7 +126,6 @@ h3 {
 
 p {
     color: var(--color__dark);
-    line-height: 24px;
     transition: var(--transition__medium);
 }
 
@@ -274,19 +273,18 @@ main {
 }
 
 #start h1 {
-    margin-top: -4vh;
-    margin-bottom: 5vh;
+    margin-bottom: var(--length__small);
 }
 
 #start p:first-of-type {
     color: var(--color__bright);
-    font: var(--font__small)/1 var(--font__light);
+    font: var(--font__small) var(--font__light);
     /*margin-bottom: -3vh;*/
 }
 
 #start p:last-of-type {
     color: var(--color__bright);
-    font: var(--font__small)/1 var(--font__light);
+    font: var(--font__small) var(--font__light);
 }
 
 
@@ -297,7 +295,7 @@ main {
 
 #works {
     text-align: center;
-    padding-top: 15vh;
+    padding: 15vh 0 15vh 0;
 }
 
 #works h2 {
@@ -311,14 +309,28 @@ main {
     transition: var(--transition__medium);
 }
 
-
 .works__description {
+    position: relative;
     font: var(--font__small) var(--font__light);
     max-width: 540px;
-    padding-bottom: 10vh;
+    padding-top: var(--length__small);
+    padding-bottom: 7vh;
     margin: 0 auto;
 }
 
+
+.works__description::after {
+    content:"";
+    display: block;
+    width: 1px;
+    margin: var(--length__small) auto 0 auto;
+    height: var(--length__small);
+    background-color: var(--color__dark);
+}
+
+.works__description.works__noafter::after {
+    display: none;
+}
 
 .works__link:hover .works__title,
 .works__link:hover .works__description {
@@ -333,16 +345,17 @@ main {
 
 #archive {
     text-align: center;
-    padding-top: 16vh;
+    padding-top: var(--length__huge);
+    padding-bottom: var(--length__huge);
 }
 
 #archive h2 {
-    margin-bottom: var(--margin__bottom--small);
+    margin-bottom: var(--length__small);
 }
 
 #archive > p {
     max-width: 600px;
-    margin: 0 auto var(--margin__bottom--small) auto;
+    margin: 0 auto var(--length__small) auto;
     font: var(--font__small) var(--font__light);
 }
 
@@ -384,7 +397,6 @@ main {
 
 .contact--main h1 {
     line-height: 1;
-    margin-bottom: 21px;
 }
 
 .contact--details {
@@ -392,7 +404,7 @@ main {
     grid-template-columns: repeat(4, 1fr);
     justify-content: space-between;
     border-top: 1px solid var(--color__dark);
-    padding-top: 59px;
+    padding-top: 38px;
 }
 
 .contact--details__title {
