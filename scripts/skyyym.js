@@ -133,4 +133,3 @@ const scrollbar = Scrollbar.init(document.querySelector('main'), {
     alwaysShowTracks: false 
 });
 
-        

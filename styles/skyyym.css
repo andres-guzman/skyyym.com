@@ -43,7 +43,7 @@
 
 
 :root {
-    font-size: 18px;
+    font-size: 19px;
     --font__huge: clamp(3.5rem, 15vw, 16rem);
     --font__medium: 1.333rem;
     --font__small: 1rem;
@@ -58,6 +58,17 @@
     --transition__medium: all 0.5s cubic-bezier(.25,.46,.45,.94) 0s;
 }
 
+
+::-moz-selection {
+    background: var(--color__red);
+    color: var(--color__bright);
+    text-shadow:none
+}
+::selection {
+    background: var(--color__red);
+    color: var(--color__bright);
+    text-shadow:none
+}
 
 /* ==========================================================================
    Basic styles
