@@ -50,9 +50,11 @@
     --font__light: "Founders Light", Arial, Helvetica, sans-serif;
     --font__bold: "Founders Semibold", Arial, Helvetica, sans-serif;
     --font__goth: "Halja", Georgia, serif;
+
     --color__bright: rgba(255, 255, 255, 1);
     --color__dark: rgba(255, 255, 255, 0.35);
     --color__red: #ff0841; /* rgba(255, 8, 65, 1) */
+    
     --length__huge: 18vh;
     --length__small: 9vh;
     --transition__medium: all 0.5s cubic-bezier(.25,.46,.45,.94) 0s;
@@ -442,6 +444,10 @@ main {
     align-items: center;
     justify-content: center;
     
+}
+
+.about--main > h1 {
+    margin-bottom: 30px;
 }
 
 .about--main__content {
