@@ -47,6 +47,7 @@
     --font__huge: clamp(3.5rem, 15vw, 16rem)/1;
     --font__medium: 1.333rem;
     --font__small: 1rem/24px;
+
     --font__light: "Founders Light", Arial, Helvetica, sans-serif;
     --font__bold: "Founders Semibold", Arial, Helvetica, sans-serif;
     --font__goth: "Halja", Georgia, serif;
@@ -56,8 +57,11 @@
     --color__red: #ff0841; /* rgba(255, 8, 65, 1) */
     
     --length__huge: 18vh;
-    --length__small: 8vh;
+    --length__small: 9vh;
+
     --transition__medium: all 0.5s cubic-bezier(.25,.46,.45,.94) 0s;
+    --animation__medium: 1300ms;
+    --animation__slow: 1900ms;
 }
 
 
@@ -72,6 +76,44 @@
     text-shadow:none
 }
 
+
+/* ==========================================================================
+   Animations
+   ========================================================================== */
+
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes down {
+    0% {
+        transform: translateY(-100px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes up {
+    0% {
+        transform: translateY(100px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+
 /* ==========================================================================
    Basic styles
    ========================================================================== */
@@ -84,16 +126,23 @@ html {
 body {
     height: 100%;
     background-color: #07080f; /*#07070a;*/ /*#1f1f1f*/
-    margin: 0;
+    margin: 0;    
 }
 
 #background {
     position: fixed;
+    opacity: 0;
+    animation-name: fadeIn;
+    animation-duration: 350ms;
+    animation-timing-function: cubic-bezier(.65, .05, .36, 1);
+    animation-delay: 75ms;
+    animation-fill-mode: forwards;
 }
 
 #background > svg {
     height: 100vh;
     width: 100vw;
+    opacity: 0.3;
 }
 
 a {
@@ -153,6 +202,7 @@ header {
     padding: 25px 25px 0 25px;
     position: fixed;
     width: calc(100% - 50px);
+    overflow: hidden;
     mix-blend-mode: difference;
     z-index: 10;
 }
@@ -160,6 +210,12 @@ header {
 nav {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    transform: translateY(-100px);
+    animation-name: down, fadeIn;
+    animation-duration: var(--animation__medium);
+    animation-timing-function: cubic-bezier(.075, .82, .165, 1), cubic-bezier(.65, .05, .36, 1);
+    animation-fill-mode: forwards;
+    animation-delay: 1600ms;
 }
 
 .nav__main {
@@ -243,6 +299,12 @@ footer {
     display: flex;
     justify-content: space-between;
     padding: 0 25px 20px 25px;
+    transform: translateY(100px);
+    animation-name: up, fadeIn;
+    animation-duration: var(--animation__medium);
+    animation-timing-function: cubic-bezier(.075, .82, .165, 1), cubic-bezier(.65, .05, .36, 1);
+    animation-fill-mode: forwards;
+    animation-delay: 1600ms;
 }
 
 footer div:first-of-type,
@@ -261,6 +323,12 @@ footer div:last-of-type {
 main {
     padding: 0 13.5vw 0 13.5vw;
     height: 100%;
+    opacity: 0;
+    animation-name: fadeIn;
+    animation-duration: var(--animation__slow);
+    animation-timing-function: cubic-bezier(.65, .05, .36, 1);
+    animation-delay: 1150ms;
+    animation-fill-mode: forwards;
 }
 
 
