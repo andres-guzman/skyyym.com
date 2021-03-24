@@ -56,7 +56,7 @@
     --color__red: #ff0841; /* rgba(255, 8, 65, 1) */
     
     --length__huge: 18vh;
-    --length__small: 9vh;
+    --length__small: 8vh;
     --transition__medium: all 0.5s cubic-bezier(.25,.46,.45,.94) 0s;
 }
 
@@ -85,10 +85,15 @@ body {
     height: 100%;
     background-color: #07080f; /*#07070a;*/ /*#1f1f1f*/
     margin: 0;
-    background-image: url(../assets/star_2.svg);
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: fixed;
+}
+
+#background {
+    position: fixed;
+}
+
+#background > svg {
+    height: 100vh;
+    width: 100vw;
 }
 
 a {
@@ -124,6 +129,12 @@ h3 {
     color: var(--color__bright);
     font: 6vw var(--font__bold);
     margin: 0;
+}
+
+h4 {
+    color: var(--color__bright);
+    font: var(--font__small) var(--font__bold);
+    margin: 0 0 8px 0;
 }
 
 p {
@@ -327,7 +338,7 @@ main {
     width: 1px;
     margin: var(--length__small) auto 0 auto;
     height: var(--length__small);
-    background-color: var(--color__dark);
+    background-color: var(--color__red);
 }
 
 .works__description.works__noafter::after {
@@ -356,7 +367,7 @@ main {
 }
 
 #archive > p {
-    max-width: 600px;
+    max-width: 540px;
     margin: 0 auto var(--length__small) auto;
     font: var(--font__small) var(--font__light);
 }
@@ -364,21 +375,58 @@ main {
 .archive--gallery {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-
     gap: 10px;
 }
 
 .archive--gallery__box {
-    background-color: rgba(18, 18, 26, 1);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: rgba(11, 13, 22, 1);
+    min-height: 400px;
     box-sizing: border-box;
     text-decoration: none;
     padding: 50px;
+    transition: var(--transition__medium);
+    overflow: hidden;
+}
+
+.archive--gallery__box:hover {
+    background-color: var(--color__red);
+}
+
+.archive--gallery__box:hover h3,
+.archive--gallery__box:hover p {
+    color: var(--color__red);
+}
+
+.archive--gallery__box h3 {
+    position: relative;
+    flex: 1;
+    z-index: 10;
+    transition: var(--transition__medium);
 }
 
 .archive--gallery__box p {
     color: var(--color__dark);
     font: var(--font__small) var(--font__bold);
+    transition: var(--transition__medium);
     margin-bottom: 0;
+    position: relative;
+    z-index: 10;
+}
+
+.archive--gallery__box img {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    transition: var(--transition__medium);
+}
+
+.archive--gallery__box:hover img {
+    opacity: 1;
 }
 
 
@@ -390,23 +438,25 @@ main {
 
 
 #contact {
-    display:flex;
-    flex-direction:column;
-    height:100vh;
-    align-items:center;
-    justify-content:center
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    align-items: center;
+    justify-content: center
 }
 
-.contact--main h1 {
+#contact h1 {
     line-height: 1;
 }
 
 .contact--details {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     justify-content: space-between;
+    gap: 5rem;
+    text-align: center;
     border-top: 1px solid var(--color__dark);
-    padding-top: 38px;
+    padding-top: 40px;
 }
 
 .contact--details__title {
@@ -442,25 +492,36 @@ main {
     flex-direction: column;
     height: 100vh;
     align-items: center;
-    justify-content: center;
-    
+    justify-content: center;    
 }
 
-.about--main > h1 {
-    margin-bottom: 30px;
+#about h1 {
+    line-height: 1;
 }
 
-.about--main__content {
+
+.about--details {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 3rem;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-between;
+    gap: 5rem;
+    text-align: center;
+    border-top: 1px solid var(--color__dark);
+    padding-top: 40px
 }
 
-.about--main__content > div h2 {
-    margin-bottom: 30px;
-}
-
-.about--main__content > div p {
+.about--details > div p {
     font-family: var(--font__light);
+    max-width: 540px;
     margin-bottom: 30px;
+}
+
+.about--details > div p a {
+    color: var(--color__bright);
+    text-decoration: none;
+    transition: var(--transition__medium);
+}
+
+.about--details > div p a:hover {
+    color: var(--color__red);
 }

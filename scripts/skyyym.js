@@ -102,7 +102,7 @@ class AnchorPlugin extends Scrollbar.ScrollbarPlugin {
 			return;
 		}
 
-		if (hash === '#top') {
+		if (hash === '#start') {
 			scrollbar.setMomentum(0, -scrollbar.scrollTop);
 		} else {
 			console.log('scrollTop:', scrollbar.containerEl.scrollTop);
