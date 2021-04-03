@@ -127,10 +127,12 @@ class AnchorPlugin extends Scrollbar.ScrollbarPlugin {
 
 Scrollbar.use(AnchorPlugin);
 
+
+
 // scrollbar init
 const scrollbar = Scrollbar.init(document.querySelector('main'), {
 	damping: 0.05, // 0.05
-    alwaysShowTracks: false 
+    alwaysShowTracks: true
 });
 
 // hash removal
