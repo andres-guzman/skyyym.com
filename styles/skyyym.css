@@ -8,22 +8,28 @@
    Fonts
    ========================================================================== */
 
-
-
-
 @font-face {
-    font-family: 'Founders Semibold';
-    src: url('../fonts/FoundersGrotesk-Semibold.woff2') format('woff2'),
-        url('../fonts/FoundersGrotesk-Semibold.woff') format('woff');
+    font-family: "Founders Light";
+    src: url('../fonts/FoundersGrotesk-Light.woff2') format('woff2'),
+         url('../fonts/FoundersGrotesk-Light.woff') format('woff');
     font-weight: 600;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'Monument Grotesk';
+    font-family: "Founders Semibold";
+    src: url('../fonts/FoundersGrotesk-Semibold.woff2') format('woff2'),
+         url('../fonts/FoundersGrotesk-Semibold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Monument Grotesk";
     src: url('../fonts/MonumentGrotesk-Bold.woff2') format('woff2'),
-        url('../fonts/MonumentGrotesk-Bold.woff') format('woff');
+         url('../fonts/MonumentGrotesk-Bold.woff') format('woff');
     font-weight: bold;
     font-style: normal;
     font-display: swap;
@@ -37,19 +43,32 @@
 
 
 :root {
-    font-size: 19px;
+    font-size: 20px;
+    --font__spacing: 2px;
+    --font__small: 1rem/26px;
+    --font__medium: 1.6rem;
+    --font__huge: clamp(3.5rem, 10vw, 16rem)/1px;
 
+    --ffamily__light: "Founders Light", Arial, Helvetica, sans-serif;
+    --ffamily__bold: "Founders Semibold", Arial, Helvetica, sans-serif;
+    --ffamily__huge: "Monument Grotesk", Georgia, serif;
+
+    --color__bright: rgba(255, 255, 255, 1);
+    --color__half: rgba(255, 255, 255, 0.25);
+    --color__accent: rgba(255, 8, 65, 1);
+
+    --transition__medium: all 0.4s cubic-bezier(.25, .46, .45, .94) 0s;
 }
 
 
 ::-moz-selection {
-    background: var(--color__red);
+    background: var(--color__accent);
     color: var(--color__bright);
     text-shadow:none
 }
 
 ::selection {
-    background: var(--color__red);
+    background: var(--color__accent);
     color: var(--color__bright);
     text-shadow:none
 }
@@ -79,8 +98,6 @@ body {
     margin: 0;
 }
 
-
-
 a {
     background-color: transparent;
 }
@@ -104,9 +121,82 @@ ul li {
    Navigation
    ========================================================================== */
 
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 75px 100px 0 100px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    mix-blend-mode: difference;
+    z-index: 10;
+}
 
 
+#nav--logo {
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+    color: var(--color__bright);
+    transition: var(--transition__medium);
+    
+}
 
+#nav--logo:hover {
+    color: var(--color__half);    
+}
+
+#nav--logo:hover #nav--logo__icon {
+    fill: var(--color__half);
+}
+
+#nav--logo__icon {
+    fill: var(--color__bright);
+    width: auto;
+    height: 37px;
+    margin-right: 20px;
+    transition: var(--transition__medium);
+}
+
+
+.nav--logo__skyyym {
+    font: 16px var(--ffamily__bold);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    padding-top: 3px;
+}
+
+.nav--logo__caption {
+    font: 14px var(--ffamily__light);
+    letter-spacing: 1px;
+}
+
+#nav--links {
+    display: flex;
+}
+
+#nav--links li {
+    margin-right: 50px;
+}
+
+#nav--links li:last-of-type {
+    margin-right: 0;
+}
+
+#nav--links li a {
+    color: var(--color__bright);
+    font: 13px var(--ffamily__bold);
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: var(--transition__medium);
+}
+
+#nav--links li a:hover {
+    color: var(--color__half);
+}
 
 
 /* ==========================================================================
@@ -114,7 +204,44 @@ ul li {
    ========================================================================== */
 
 
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 100px 75px 100px;
+    font-size: 0.8rem;
+}
 
+footer > div {
+    color: var(--color__half);
+    font-family: var(--ffamily__light);
+}
+
+#nav--social {
+    display: flex;
+}
+
+#nav--social li {
+    margin-right: 50px;
+}
+
+#nav--social li:last-of-type {
+    margin-right: 0;
+}
+
+#nav--social li a {
+    color: var(--color__bright);
+    font-family: var(--ffamily__light);
+    text-decoration: none;
+    transition: var(--transition__medium);
+}
+
+#nav--social li a:hover {
+    color: var(--color__half);
+}
 
 
 /* ==========================================================================
@@ -130,6 +257,45 @@ ul li {
    ========================================================================== */
 
 
+#welcome {
+    height: calc(100vh - 173px);
+    padding: 187px 100px 0 100px;
+    box-sizing: border-box;
+    
+}
+
+
+.welcome--content {
+    display: grid;
+    justify-items: center;
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--color__half);
+    box-sizing: border-box;
+}
+
+.welcome--content > p {
+    align-self: end;
+    color: var(--color__bright);
+    font: var(--font__small) var(--ffamily__light);
+}
+
+.welcome--content > div {
+    align-self: center;
+    color: var(--color__bright);
+    font: var(--font__huge) var(--ffamily__huge);
+    text-transform: uppercase;
+    padding: 45px 0;
+}
+
+.welcome--content > svg {
+    align-self: start;
+}
+
+.welcome--arrow {
+    width: 30px;
+    height: auto;
+}
 
 
 /* ==========================================================================
