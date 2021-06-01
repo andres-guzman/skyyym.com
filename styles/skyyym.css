@@ -9,23 +9,7 @@
    ========================================================================== */
 
 
-@font-face {
-    font-family: 'Halja';
-    src: url('../fonts/halja-regular-webfont.woff2') format('woff2'),
-         url('../fonts/halja-regular-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
 
-@font-face {
-    font-family: 'Founders Light';
-    src: url('../fonts/FoundersGrotesk-Light.woff2') format('woff2'),
-        url('../fonts/FoundersGrotesk-Light.woff') format('woff');
-    font-weight: 300;
-    font-style: normal;
-    font-display: swap;
-}
 
 @font-face {
     font-family: 'Founders Semibold';
@@ -36,6 +20,16 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: 'Monument Grotesk';
+    src: url('../fonts/MonumentGrotesk-Bold.woff2') format('woff2'),
+        url('../fonts/MonumentGrotesk-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+
 
 /* ==========================================================================
    Custom properties
@@ -44,24 +38,7 @@
 
 :root {
     font-size: 19px;
-    --font__huge: clamp(3.5rem, 15vw, 16rem)/1;
-    --font__medium: 1.333rem;
-    --font__small: 1rem/24px;
 
-    --font__light: "Founders Light", Arial, Helvetica, sans-serif;
-    --font__bold: "Founders Semibold", Arial, Helvetica, sans-serif;
-    --font__goth: "Halja", Georgia, serif;
-
-    --color__bright: rgba(255, 255, 255, 1);
-    --color__dark: rgba(255, 255, 255, 0.35);
-    --color__red: #ff0841; /* rgba(255, 8, 65, 1) */
-    
-    --length__huge: 18vh;
-    --length__small: 9vh;
-
-    --transition__medium: all 0.5s cubic-bezier(.25,.46,.45,.94) 0s;
-    --animation__medium: 1300ms;
-    --animation__slow: 1900ms;
 }
 
 
@@ -70,6 +47,7 @@
     color: var(--color__bright);
     text-shadow:none
 }
+
 ::selection {
     background: var(--color__red);
     color: var(--color__bright);
@@ -82,40 +60,12 @@
    ========================================================================== */
 
 
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
 
-    100% {
-        opacity: 1;
-    }
-}
-
-@keyframes down {
-    0% {
-        transform: translateY(-100px);
-    }
-
-    100% {
-        transform: translateY(0);
-    }
-}
-
-@keyframes up {
-    0% {
-        transform: translateY(100px);
-    }
-
-    100% {
-        transform: translateY(0);
-    }
-}
 
 
 
 /* ==========================================================================
-   Basic styles
+   Base styles
    ========================================================================== */
 
 
@@ -125,25 +75,11 @@ html {
 
 body {
     height: 100%;
-    background-color: #07080f; /*#07070a;*/ /*#1f1f1f*/
+    background-color: rgba(11, 11, 15, 1);
     margin: 0;
 }
 
-#background {
-    position: fixed;
-    opacity: 0;
-    animation-name: fadeIn;
-    animation-duration: 350ms;
-    animation-timing-function: cubic-bezier(.65, .05, .36, 1);
-    animation-delay: 75ms;
-    animation-fill-mode: forwards;
-}
 
-#background > svg {
-    height: 100vh;
-    width: 100vw;
-    opacity: 0.3;
-}
 
 a {
     background-color: transparent;
@@ -161,156 +97,23 @@ ul li {
     list-style-type: none;
 }
 
-h1 {
-    color: var(--color__bright);
-    font: var(--font__huge) var(--font__goth); 
-    letter-spacing: 4px;
-    transition: var(--transition__medium);
-    text-align: center;
-}
-
-h2 {
-    color: var(--color__bright);
-    font: var(--font__medium)/1 var(--font__bold);
-}
-
-h3 {
-    color: var(--color__bright);
-    font: 6vw var(--font__bold);
-    margin: 0;
-}
-
-h4 {
-    color: var(--color__bright);
-    font: var(--font__small) var(--font__bold);
-    margin: 0 0 8px 0;
-}
-
-p {
-    color: var(--color__dark);
-    transition: var(--transition__medium);
-}
-
-
-/* ==========================================================================
-   Header and navigation
-   ========================================================================== */
-
-
-header {
-    padding: 25px 25px 0 25px;
-    position: fixed;
-    width: calc(100% - 50px);
-    overflow: hidden;
-    mix-blend-mode: difference;
-    z-index: 10;
-}
-
-nav {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    transform: translateY(-100px);
-    animation-name: down, fadeIn;
-    animation-duration: var(--animation__medium);
-    animation-timing-function: cubic-bezier(.075, .82, .165, 1), cubic-bezier(.65, .05, .36, 1);
-    animation-fill-mode: forwards;
-    animation-delay: 1600ms;
-}
-
-.nav__main {
-    display: flex;
-}
-
-.nav__main li {
-    margin-right: 50px;
-}
-
-.nav__main li > a {
-    color: var(--color__bright);
-    font: 13px "Founders Semibold", Arial, Helvetica, sans-serif;
-    text-transform: uppercase;
-    text-decoration: none;
-    vertical-align: top;
-    transition: var(--transition__medium);
-}
-
-.nav__main li > a:hover {
-    color: var(--color__red);
-}
-
-.nav__main li:last-of-type {
-    margin-right: 0;
-}
-
-.nav__logo {
-    width: 110px;
-    height: auto;
-    margin: 0 auto;
-}
-
-.nav__main--logo {
-    fill: var(--color__bright);
-    transition: var(--transition__medium);
-    
-}
-
-.nav__logo:hover .nav__main--logo {
-    fill: var(--color__red);
-}
-
-.nav__social {
-    display: flex;
-    justify-content: flex-end;
-}
-
-.nav__social li {
-    margin-left: 50px;
-}
-
-.nav__social li > a {
-    color: var(--color__bright);
-    font: 16px "Founders Light", Arial, Helvetica, sans-serif;
-    text-decoration: none;
-    vertical-align: top;
-    transition: var(--transition__medium);
-}
-
-.nav__social li a:hover {
-    color: var(--color__red);
-}
-
-.nav__social li:first-of-type {
-    margin-left: 0;
-}
 
 
 
 /* ==========================================================================
-   Footer and copyright
+   Navigation
    ========================================================================== */
 
 
-footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: space-between;
-    padding: 0 25px 20px 25px;
-    transform: translateY(100px);
-    animation-name: up, fadeIn;
-    animation-duration: var(--animation__medium);
-    animation-timing-function: cubic-bezier(.075, .82, .165, 1), cubic-bezier(.65, .05, .36, 1);
-    animation-fill-mode: forwards;
-    animation-delay: 1600ms;
-}
 
-footer div:first-of-type,
-footer div:last-of-type {
-    color: var(--color__dark);
-    font: 0.889rem var(--font__light);
-}
+
+
+
+/* ==========================================================================
+   Footer / social media links
+   ========================================================================== */
+
+
 
 
 
@@ -319,53 +122,14 @@ footer div:last-of-type {
    ========================================================================== */
 
 
-main {
-    padding: 0 13.5vw 0 13.5vw;
-    height: 100%;
-    opacity: 0;
-    animation-name: fadeIn;
-    animation-duration: var(--animation__slow);
-    animation-timing-function: cubic-bezier(.65, .05, .36, 1);
-    animation-delay: 1150ms;
-    animation-fill-mode: forwards;
-}
+
 
 
 /* ==========================================================================
-   Section start
+   Section welcome
    ========================================================================== */
 
 
-#start {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    align-items: center;
-    justify-content: center;
-}
-
-.welcome__star {
-    width: 70px;
-}
-
-.welcome__star--pentagram {
-    fill: var(--color__red);
-}
-
-#start h1 {
-    margin-bottom: var(--length__small);
-}
-
-#start p:first-of-type {
-    color: var(--color__bright);
-    font: var(--font__small) var(--font__light);
-    /*margin-bottom: -3vh;*/
-}
-
-#start p:last-of-type {
-    color: var(--color__bright);
-    font: var(--font__small) var(--font__light);
-}
 
 
 /* ==========================================================================
@@ -373,49 +137,6 @@ main {
    ========================================================================== */
 
 
-#works {
-    text-align: center;
-    padding: 15vh 0 15vh 0;
-}
-
-#works h2 {
-    margin-bottom: 10vh;
-    transition: var(--transition__medium);
-}
-
-#works a {
-    display: inline-block;
-    text-decoration: none;
-    transition: var(--transition__medium);
-}
-
-.works__description {
-    position: relative;
-    font: var(--font__small) var(--font__light);
-    max-width: 540px;
-    padding-top: var(--length__small);
-    padding-bottom: 7vh;
-    margin: 0 auto;
-}
-
-
-.works__description::after {
-    content:"";
-    display: block;
-    width: 1px;
-    margin: var(--length__small) auto 0 auto;
-    height: var(--length__small);
-    background-color: var(--color__red);
-}
-
-.works__description.works__noafter::after {
-    display: none;
-}
-
-.works__link:hover .works__title,
-.works__link:hover .works__description {
-    color: var(--color__red);
-}
 
 
 
@@ -423,128 +144,7 @@ main {
    Section archive
    ========================================================================== */
 
-#archive {
-    text-align: center;
-    padding-top: var(--length__huge);
-    padding-bottom: var(--length__huge);
-}
 
-#archive h2 {
-    margin-bottom: var(--length__small);
-}
-
-#archive > p {
-    max-width: 540px;
-    margin: 0 auto var(--length__small) auto;
-    font: var(--font__small) var(--font__light);
-}
-
-.archive--gallery {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 10px;
-}
-
-.archive--gallery__box {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    background-color: rgba(11, 13, 22, 1);
-    min-height: 400px;
-    box-sizing: border-box;
-    text-decoration: none;
-    padding: 50px;
-    transition: var(--transition__medium);
-    overflow: hidden;
-}
-
-.archive--gallery__box:hover {
-    background-color: var(--color__red);
-}
-
-.archive--gallery__box:hover h3,
-.archive--gallery__box:hover p {
-    color: var(--color__red);
-}
-
-.archive--gallery__box h3 {
-    position: relative;
-    flex: 1;
-    z-index: 10;
-    transition: var(--transition__medium);
-}
-
-.archive--gallery__box p {
-    color: var(--color__dark);
-    font: var(--font__small) var(--font__bold);
-    transition: var(--transition__medium);
-    margin-bottom: 0;
-    position: relative;
-    z-index: 10;
-}
-
-.archive--gallery__box img {
-    opacity: 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    transition: var(--transition__medium);
-}
-
-.archive--gallery__box:hover img {
-    opacity: 1;
-}
-
-
-
-
-/* ==========================================================================
-   Section contact
-   ========================================================================== */
-
-
-#contact {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    align-items: center;
-    justify-content: center
-}
-
-#contact h1 {
-    line-height: 1;
-}
-
-.contact--details {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    justify-content: space-between;
-    gap: 5rem;
-    text-align: center;
-    border-top: 1px solid var(--color__dark);
-    padding-top: 40px;
-}
-
-.contact--details__title {
-    color: var(--color__bright);
-    font: var(--font__small) var(--font__bold);
-    margin-bottom: 6px;
-}
-
-.contact--details__content {
-    color: var(--color__dark);
-    font: var(--font__small) var(--font__light);
-}
-
-.contact--details > div a {
-    text-decoration: none;
-    transition: var(--transition__medium);
-}
-
-.contact--details > div a:hover {
-    color: var(--color__red);
-}
 
 
 
@@ -554,43 +154,20 @@ main {
    ========================================================================== */
 
 
-#about {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    align-items: center;
-    justify-content: center;    
-}
-
-#about h1 {
-    line-height: 1;
-}
 
 
-.about--details {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    justify-content: space-between;
-    gap: 5rem;
-    text-align: center;
-    border-top: 1px solid var(--color__dark);
-    padding-top: 40px
-}
 
-.about--details > div p {
-    font-family: var(--font__light);
-    max-width: 540px;
-    margin-bottom: 30px;
-}
 
-.about--details > div p a {
-    color: var(--color__bright);
-    text-decoration: none;
-    transition: var(--transition__medium);
-}
 
-.about--details > div p a:hover {
-    color: var(--color__red);
-}
+/* ==========================================================================
+   Section contact
+   ========================================================================== */
+
+
+
+
+/* ==========================================================================
+   Media queries
+   ========================================================================== */
 
 
