@@ -47,7 +47,7 @@
     --font__spacing: 2px;
     --font__small: 1rem/26px;
     --font__medium: 1.6rem;
-    --font__huge: clamp(3.5rem, 10vw, 16rem)/1px;
+    --font__huge: clamp(3.5rem, 11.5vw, 16rem)/1px;
 
     --ffamily__light: "Founders Light", Arial, Helvetica, sans-serif;
     --ffamily__bold: "Founders Semibold", Arial, Helvetica, sans-serif;
@@ -56,6 +56,9 @@
     --color__bright: rgba(255, 255, 255, 1);
     --color__half: rgba(255, 255, 255, 0.25);
     --color__accent: rgba(255, 8, 65, 1);
+
+    --margin__small: 25px;
+    --margin__big: 20vh;
 
     --transition__medium: all 0.4s cubic-bezier(.25, .46, .45, .94) 0s;
 }
@@ -78,8 +81,14 @@
    Animations
    ========================================================================== */
 
-
-
+@keyframes worksBackground {
+    0% {
+        transform:translate(0)
+    }
+    100% {
+        transform:translate(100vw)
+    }
+}
 
 
 
@@ -108,6 +117,26 @@ h2,
 ul {
     margin: 0;
     padding: 0;
+}
+
+h1 {
+    color: var(--color__bright);
+    font: var(--font__huge) var(--ffamily__huge);
+}
+
+h2 {
+    color: var(--color__bright);
+    font: var(--font__medium) var(--ffamily__light);
+    margin: 0 0 var(--margin__small) 0;
+}
+
+p {
+    color: var(--color__half);
+    font: var(--font__small) var(--ffamily__light);
+}
+
+a {
+    text-decoration: none;
 }
 
 ul li {
@@ -213,6 +242,8 @@ footer {
     justify-content: space-between;
     padding: 0 100px 75px 100px;
     font-size: 0.8rem;
+    mix-blend-mode: difference;
+    z-index: 10;
 }
 
 footer > div {
@@ -261,9 +292,8 @@ footer > div {
     height: calc(100vh - 173px);
     padding: 187px 100px 0 100px;
     box-sizing: border-box;
-    
+    margin-bottom: var(--margin__big);
 }
-
 
 .welcome--content {
     display: grid;
@@ -280,10 +310,8 @@ footer > div {
     font: var(--font__small) var(--ffamily__light);
 }
 
-.welcome--content > div {
+.welcome--content > h1 {
     align-self: center;
-    color: var(--color__bright);
-    font: var(--font__huge) var(--ffamily__huge);
     text-transform: uppercase;
     padding: 45px 0;
 }
@@ -302,7 +330,110 @@ footer > div {
    Section works
    ========================================================================== */
 
+#works {
+    margin-bottom: var(--margin__big);
+}
 
+.works--link {
+    display: block;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+    padding: 100px 100px;
+}
+
+.works--link p {
+    transition: var(--transition__medium);
+}
+
+.works--link:hover p {
+    color: var(--color__bright);
+}
+
+.works--link::before {
+    opacity: 0;
+    content: '';
+    position: absolute;
+    overflow: hidden;
+    left: -100vw;
+    top: -100vh;
+    width: calc(100% + 100vw);
+    height: calc(100% + 100vh);    
+    background-size: 100vw auto;
+    animation-name: worksBackground;
+    animation-duration: 50s;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    z-index: -1;
+    filter: grayscale(1);
+    transition: var(--transition__medium);
+}
+
+.works--link:hover::before {
+    opacity: 0.25;
+}
+
+
+/* individual ::before psuedo elemetns */
+
+
+.works--link[href*="badtrash.com"]::before {
+    background-image: url(../_assets/shot_badtrash.jpg);
+}
+
+.works--link[href*="plotterprint.com.bo"]::before {
+    background-image: url(../_assets/shot_plotter.jpg);
+}
+
+.works--link[href*="trash.ink"]::before {
+    background-image: url(../_assets/shot_trash.jpg);
+}
+
+.works--link[href*="minivaxx.com"]::before {
+    background-image: url(../_assets/shot_minivaxx.jpg);
+}
+
+.works--link[href*="androgenlab.com"]::before {
+    background-image: url(../_assets/shot_androgen.jpg);
+}
+
+.works--link[href*="simpshots.com"]::before {
+    background-image: url(../_assets/shot_simpshots.jpg);
+}
+
+
+
+/* that ends here */
+
+.works--window {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+
+.works--window h1 {
+    position: relative;
+    transform: translateY(41%);
+}
+
+.works--window h1::after {
+    content: "(website)";
+    position: absolute;
+    top: 100px;
+    right: 0;
+    font: var(--font__medium) var(--ffamily__light);
+}
+
+.works--history {
+    max-width: 480px;
+}
+
+.works--history {
+    flex: 1;
+}
 
 
 
