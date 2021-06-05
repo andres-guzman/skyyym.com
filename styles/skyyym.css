@@ -46,8 +46,8 @@
     font-size: 20px;
     --font__spacing: 2px;
     --font__small: 1rem/26px;
-    --font__medium: 1.6rem;
-    --font__huge: clamp(3.5rem, 11.5vw, 16rem)/1px;
+    --font__medium: 1.6rem/0.5;
+    --font__huge: clamp(3.5rem, 11.5vw, 16rem)/10px;
 
     --ffamily__light: "Founders Light", Arial, Helvetica, sans-serif;
     --ffamily__bold: "Founders Semibold", Arial, Helvetica, sans-serif;
@@ -57,10 +57,12 @@
     --color__half: rgba(255, 255, 255, 0.25);
     --color__accent: rgba(255, 8, 65, 1);
 
-    --margin__small: 25px;
+    --margin__small: 17px;
+    --margin__medium: 36px;
     --margin__big: 20vh;
 
-    --transition__medium: all 0.4s cubic-bezier(.25, .46, .45, .94) 0s;
+    --transition__fast: all 0.3s cubic-bezier(.25, .46, .45, .94) 0s;
+    --transition__medium: all 0.6s cubic-bezier(.25, .46, .45, .94) 0s;
 }
 
 
@@ -111,28 +113,28 @@ a {
     background-color: transparent;
 }
 
-p, 
-h1, 
-h2,
-ul {
-    margin: 0;
-    padding: 0;
-}
-
 h1 {
     color: var(--color__bright);
     font: var(--font__huge) var(--ffamily__huge);
+    margin: 0;
 }
 
 h2 {
     color: var(--color__bright);
     font: var(--font__medium) var(--ffamily__light);
-    margin: 0 0 var(--margin__small) 0;
+    margin: 0 0 var(--margin__medium) 0;
+}
+
+h3 {
+    color: var(--color__bright);
+    font: 6rem/1 var(--ffamily__light);
+    margin: 0;
 }
 
 p {
     color: var(--color__half);
     font: var(--font__small) var(--ffamily__light);
+    margin: 0;
 }
 
 a {
@@ -170,7 +172,7 @@ nav {
     flex-direction: row;
     text-decoration: none;
     color: var(--color__bright);
-    transition: var(--transition__medium);
+    transition: var(--transition__fast);
     
 }
 
@@ -187,15 +189,15 @@ nav {
     width: auto;
     height: 37px;
     margin-right: 20px;
-    transition: var(--transition__medium);
+    transition: var(--transition__fast);
 }
 
 
 .nav--logo__skyyym {
-    font: 16px var(--ffamily__bold);
+    font: 17px var(--ffamily__bold);
     letter-spacing: 4px;
     text-transform: uppercase;
-    padding-top: 3px;
+    padding-top: 1px;
 }
 
 .nav--logo__caption {
@@ -220,7 +222,7 @@ nav {
     font: 13px var(--ffamily__bold);
     text-decoration: none;
     text-transform: uppercase;
-    transition: var(--transition__medium);
+    transition: var(--transition__fast);
 }
 
 #nav--links li a:hover {
@@ -267,7 +269,7 @@ footer > div {
     color: var(--color__bright);
     font-family: var(--ffamily__light);
     text-decoration: none;
-    transition: var(--transition__medium);
+    transition: var(--transition__fast);
 }
 
 #nav--social li a:hover {
@@ -313,7 +315,7 @@ footer > div {
 .welcome--content > h1 {
     align-self: center;
     text-transform: uppercase;
-    padding: 45px 0;
+    padding: 50px 0;
 }
 
 .welcome--content > svg {
@@ -329,6 +331,7 @@ footer > div {
 /* ==========================================================================
    Section works
    ========================================================================== */
+
 
 #works {
     margin-bottom: var(--margin__big);
@@ -405,8 +408,8 @@ footer > div {
 }
 
 
-
 /* that ends here */
+
 
 .works--window {
     display: flex;
@@ -441,7 +444,65 @@ footer > div {
    Section archive
    ========================================================================== */
 
+#archive {
+    padding: 0 100px;
+    text-align: center;
+}
 
+.archive--intro {
+    max-width: 600px;
+    margin: 0 auto var(--margin__medium) auto;
+}
+
+.archive--gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    padding: 0 160px;
+}
+
+.archive--gallery__window {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-color: rgba(18, 18, 22, 1);
+    box-sizing: border-box;
+    text-decoration: none;
+    padding: 50px;
+    transition: var(--transition__medium);
+    overflow: hidden;
+    min-height: 454px;
+    aspect-ratio: 1;
+    
+}
+
+.archive--gallery__window:hover {
+    background-color: rgba(18, 18, 22, 0);
+}
+
+.archive--gallery__window:hover img {
+    opacity: 0.20;
+}
+
+.archive--gallery__window p {
+    color: var(--color__bright);
+    margin-top: -25px;
+}
+
+.archive--gallery__window img {
+    opacity: 0;
+    position: absolute;
+    width: auto;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    filter: grayscale(1);
+    transition: var(--transition__medium);
+    z-index: -1;
+}
 
 
 
