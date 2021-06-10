@@ -85,10 +85,10 @@
 
 @keyframes worksBackground {
     0% {
-        transform:translate(0)
+        transform: translate(0);
     }
     100% {
-        transform:translate(100vw)
+        transform: translate(100vw);
     }
 }
 
@@ -342,7 +342,7 @@ footer > div {
     box-sizing: border-box;
     position: relative;
     overflow: hidden;
-    padding: 100px 100px;
+    padding: 125px 100px;
 }
 
 .works--link p {
@@ -408,7 +408,7 @@ footer > div {
 }
 
 
-/* that ends here */
+/* individual ends here */
 
 
 .works--window {
@@ -456,9 +456,12 @@ footer > div {
 
 .archive--gallery {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 10px;
+    max-width: 1905px;
+    --n: 4; /* the max number of columns */
+    grid-template-columns: repeat(auto-fill, minmax(max(340px, 100%/var(--n)), 1fr));
+    gap: 0.5rem;
     padding: 0 160px;
+    margin: 0 auto;
 }
 
 .archive--gallery__window {
@@ -473,9 +476,8 @@ footer > div {
     padding: 50px;
     transition: var(--transition__medium);
     overflow: hidden;
-    min-height: 454px;
-    aspect-ratio: 1;
-    
+    /* min-height: 454px; */
+    aspect-ratio: 2/2.8;    
 }
 
 .archive--gallery__window:hover {
@@ -486,9 +488,13 @@ footer > div {
     opacity: 0.20;
 }
 
-.archive--gallery__window p {
+.archive--gallery__window:hover p {
     color: var(--color__bright);
+}
+
+.archive--gallery__window p {
     margin-top: -25px;
+    transition: var(--transition__medium);
 }
 
 .archive--gallery__window img {
