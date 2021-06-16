@@ -22,6 +22,7 @@
 }());
 
 // edge easing plugin
+
 "use strict";
 
 var __extends = this && this.__extends || function () {
@@ -126,7 +127,6 @@ class AnchorPlugin extends Scrollbar.ScrollbarPlugin {
 }
 
 Scrollbar.use(AnchorPlugin);
-
 
 
 // scrollbar init
