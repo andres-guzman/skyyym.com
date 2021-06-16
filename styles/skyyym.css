@@ -130,6 +130,7 @@ h1 {
     color: var(--color__bright);
     font: var(--font__huge) var(--ffamily__huge);
     line-height: 0.75;
+    transition: var(--transition__medium);
 }
 
 h2 {
@@ -138,6 +139,7 @@ h2 {
     line-height: 0.75;
     text-transform: uppercase;
     margin: 0 0 var(--margin__medium) 0;
+    transition: var(--transition__medium);
 }
 
 h3 {
@@ -149,8 +151,9 @@ h3 {
 
 h4 {
     color: var(--color__bright);
-    font: 6vw/1 var(--ffamily__huge);
-    margin: 0;
+    font: 6vw/0.75 var(--ffamily__huge);
+    margin: 0 0 var(--margin__small) 0;
+    transition: var(--transition__medium);
 }
 
 p {
@@ -351,7 +354,7 @@ footer > div {
     box-sizing: border-box;
     position: relative;
     overflow: hidden;
-    padding: 90px 50px;
+    padding: 60px 50px;
     text-align: center;
 }
 
@@ -367,7 +370,7 @@ footer > div {
     height: calc(100% + 100vh);    
     background-size: 100vw auto;
     animation-name: worksBackground;
-    animation-duration: 36s;
+    animation-duration: 66s;
     animation-delay: 0s;
     animation-iteration-count: infinite;
     animation-direction: normal;
@@ -380,6 +383,38 @@ footer > div {
 
 .works--link:hover::before {
     opacity: 0.25;
+}
+
+.works--link > h2 {
+    transition: var(--transition__medium);
+}
+
+
+/* indivicual colors for each h2 */
+
+
+.works--link[href*="badtrash.com"]:hover > h2 {
+    color: #a251ff;
+}
+
+.works--link[href*="plotterprint.com.bo"]:hover > h2 {
+    color: #45ffd1;
+}
+
+.works--link[href*="trash.ink"]:hover > h2 {
+    color: #ff1f84;
+}
+
+.works--link[href*="minivaxx.com"]:hover > h2 {
+    color: #2f96ff;
+}
+
+.works--link[href*="androgenlab.com"]:hover > h2 {
+    color: #5f19ff;
+}
+
+.works--link[href*="simpshots.com"]:hover > h2 {
+    color: #99ff5b;
 }
 
 
@@ -438,19 +473,22 @@ footer > div {
 
 
 #archive {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
     padding: 0 50px;
     text-align: center;
-    margin-bottom: var(--margin__big);
 }
 
 
 .archive--gallery {
-    --n: 5; /* the max number of columns */
+    /* --n: 5;  the max number of columns */
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 0.75rem;
     margin: 0 auto;
+
 }
 
 .archive--gallery__window {
@@ -474,7 +512,7 @@ footer > div {
 }
 
 .archive--gallery__window:hover img {
-    opacity: 0.20;
+    opacity: 0.25;
 }
 
 .archive--gallery__window:hover p {
@@ -482,7 +520,6 @@ footer > div {
 }
 
 .archive--gallery__window p {
-    margin-top: -25px;
     transition: var(--transition__medium);
 }
 
@@ -494,7 +531,7 @@ footer > div {
     /* top: 50%;
     left: 50%;
     transform: translate(-50%, -50%); */
-    filter: grayscale(1);
+    /* filter: grayscale(1); */
     transition: var(--transition__medium);
     z-index: -1;
 }
