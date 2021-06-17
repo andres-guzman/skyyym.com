@@ -47,7 +47,7 @@
 :root {
     font-size: 16px;
     --font__spacing: 1px;
-    --font__small: 0.875rem/18px;
+    --font__small: 0.875rem/17px;
     --font__medium: clamp(3rem, 13vw, 17rem);
     --font__huge: clamp(5rem, 42vw, 50rem);
 
@@ -56,7 +56,7 @@
     --ffamily__huge: "Tungsten Condensed", Georgia, serif;
 
     --color__bright: rgba(176, 186, 175, 1);
-    --color__half: rgba(176, 186, 175, 1);
+    --color__half: rgba(176, 186, 175, 0.5);
     /* --color__accent: rgba(255, 8, 65, 1); */
 
     --margin__small: 5px;
@@ -177,7 +177,7 @@ h4 {
 }
 
 p {
-    color: var(--color__half);
+    color: var(--color__bright);
     font: var(--font__small) var(--ffamily__light);
     text-transform: uppercase;
     letter-spacing: var(--font__spacing);
@@ -189,12 +189,12 @@ a {
 }
 
 p a {
-    color: var(--color__half);
+    color: var(--color__bright);
     transition: var(--transition__fast);
 }
 
 p a:hover {
-    color: var(--color__bright);
+    color: var(--color__half);
 }
 
 ul li {
@@ -701,9 +701,6 @@ a:visited {
 .archive--close:hover .archive--close__stroke {
     stroke: #161616;
 }
-
-
-
 
 
 
