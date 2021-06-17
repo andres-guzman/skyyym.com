@@ -70,25 +70,18 @@
     --color__half: rgba(169, 180, 168, 0.35);
     /* --color__accent: rgba(255, 8, 65, 1); */
 
-    --margin__small: 17px;
-    --margin__medium: 5vh;
-    --margin__big: 10vh;
+    --margin__small: 5px;
+    --margin__medium: 20px;
+    --margin__big: 5vh;
 
     --transition__fast: all 0.3s cubic-bezier(.25, .46, .45, .94) 0s;
     --transition__medium: all 0.6s cubic-bezier(.25, .46, .45, .94) 0s;
 }
 
-
-::-moz-selection {
-    background: var(--color__accent);
-    color: var(--color__bright);
-    text-shadow: none
-}
-
 ::selection {
-    background: var(--color__accent);
-    color: var(--color__bright);
-    text-shadow: none
+    background: var(--color__bright);
+    color: rgba(22, 22, 22, 1);
+    text-shadow: none;
 }
 
 
@@ -130,7 +123,9 @@ h1 {
     color: var(--color__bright);
     font: var(--font__huge) var(--ffamily__huge);
     line-height: 0.75;
+    text-transform: uppercase;
     transition: var(--transition__medium);
+    margin: 0;
 }
 
 h2 {
@@ -146,13 +141,13 @@ h3 {
     color: var(--color__bright);
     font: 1rem/1 var(--ffamily__bold);
     text-transform: uppercase;
-    margin: 0 0 var(--margin__small) 0;
+    margin: 0 0 var(--margin__medium) 0;
 }
 
 h4 {
     color: var(--color__bright);
     font: 6vw/0.75 var(--ffamily__huge);
-    margin: 0 0 var(--margin__small) 0;
+    margin: 0 0 var(--margin__medium) 0;
     transition: var(--transition__medium);
 }
 
@@ -166,6 +161,15 @@ p {
 
 a {
     text-decoration: none;
+}
+
+p a {
+    color: var(--color__half);
+    transition: var(--transition__fast);
+}
+
+p a:hover {
+    color: var(--color__bright);
 }
 
 ul li {
@@ -235,6 +239,7 @@ nav {
 #nav--links {
     display: flex;
     margin: 0;
+    padding: 0;
 }
 
 #nav--links li {
@@ -315,7 +320,17 @@ footer > div {
    ========================================================================== */
 
 
+#outer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
 
+.scrollbar-track {
+    display: none !important;
+}
 
 
 /* ==========================================================================
@@ -328,7 +343,6 @@ footer > div {
     flex-direction: column;
     justify-content: center;
     text-align: right;
-    text-transform: uppercase;
     width: 100%;
     height: 100vh;
     box-sizing: border-box;
@@ -338,28 +352,31 @@ footer > div {
 
 #welcome > h1 {
     margin-right: -20px;
+    position: relative;
 }
+
+
 
 /* ==========================================================================
    Section works
    ========================================================================== */
 
 
-#works {
+/* #works {
     margin-bottom: var(--margin__big);
-}
+} */
 
 .works--link {
     display: block;
     box-sizing: border-box;
     position: relative;
     overflow: hidden;
-    padding: 60px 50px;
+    padding: 75px 50px;
     text-align: center;
 }
 
 
-.works--link::before {
+/* .works--link::before {
     opacity: 0;
     content: '';
     position: absolute;
@@ -383,18 +400,13 @@ footer > div {
 
 .works--link:hover::before {
     opacity: 0.25;
-}
-
-.works--link > h2 {
-    transition: var(--transition__medium);
-}
-
+} */
 
 /* indivicual colors for each h2 */
 
 
 .works--link[href*="badtrash.com"]:hover > h2 {
-    color: #a251ff;
+    color: #9a44fc;
 }
 
 .works--link[href*="plotterprint.com.bo"]:hover > h2 {
@@ -421,7 +433,7 @@ footer > div {
 /* individual ::before psuedo elemetns */
 
 
-.works--link[href*="badtrash.com"]::before {
+/* .works--link[href*="badtrash.com"]::before {
     background-image: url(../_assets/shot_badtrash.jpg);
 }
 
@@ -443,7 +455,7 @@ footer > div {
 
 .works--link[href*="simpshots.com"]::before {
     background-image: url(../_assets/shot_simpshots.jpg);
-}
+} */
 
 
 /* individual ends here */
@@ -453,6 +465,10 @@ footer > div {
     max-width: 480px;
     text-align: center;
     margin: 0 auto;
+}
+
+.works--link .works--history h3 {
+    padding-top: 10px;
 }
 
 .works--link .works--history p {
@@ -544,20 +560,37 @@ footer > div {
    ========================================================================== */
 
 
+#about {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    height: 100vh;
+    padding: 0 50px;
+}
 
+#about > h1 {
+    margin-left: -10px;
+}
 
+.about--description {
+    max-width: 362px;
+    margin: 0 auto;
+}
 
+.about--description h3 {
+    margin-bottom: var(--margin__small);
+}
 
-
-/* ==========================================================================
-   Section contact
-   ========================================================================== */
-
+.about--description p {
+    margin-bottom: var(--margin__big);
+}
 
 
 
 /* ==========================================================================
    Media queries
    ========================================================================== */
+
 
 

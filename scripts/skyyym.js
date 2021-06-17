@@ -130,7 +130,7 @@ Scrollbar.use(AnchorPlugin);
 
 
 // scrollbar init
-const scrollbar = Scrollbar.init(document.querySelector('main'), {
+const scrollbar = Scrollbar.init(document.querySelector('#outer'), {
 	damping: 0.05, // 0.05
     alwaysShowTracks: true
 });
