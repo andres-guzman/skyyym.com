@@ -21,8 +21,8 @@
     }
 }());
 
-// edge easing plugin
 
+// edge easing plugin
 "use strict";
 
 var __extends = this && this.__extends || function () {
@@ -71,8 +71,8 @@ var EdgeEasingPlugin = /** @class */function (_super) {
 
 Scrollbar.use(EdgeEasingPlugin);
 
-// hash plugin
 
+// hash plugin
 class AnchorPlugin extends Scrollbar.ScrollbarPlugin {
 	static pluginName = 'anchor';
 
@@ -135,4 +135,8 @@ const scrollbar = Scrollbar.init(document.querySelector('#outer'), {
     alwaysShowTracks: true
 });
 
-// hash removal
+
+// hisotry back
+document.getElementById('archive--close').addEventListener('click', () => {
+	history.back();
+});
