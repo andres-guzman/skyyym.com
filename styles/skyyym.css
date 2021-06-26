@@ -127,7 +127,7 @@ body {
     opacity: 0;
     animation-name: introFade;
     animation-duration: 1.25s;
-    animation-delay: 0.8s;
+    animation-delay: 0.7s;
     animation-iteration-count: 1;
     animation-direction: normal;
     animation-fill-mode: forwards;
@@ -390,7 +390,7 @@ footer > div {
     position: relative;
     animation-name: introLeft;
     animation-duration: 1.25s;
-    animation-delay: 0.8s;
+    animation-delay: 0.4s;
     animation-iteration-count: 1;
     animation-direction: normal;
     animation-fill-mode: forwards;
