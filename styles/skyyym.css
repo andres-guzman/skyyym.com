@@ -89,16 +89,6 @@
     }
 } */
 
-@keyframes introLeft {
-    0% {
-        transform: translateX(2vw);
-    }
-
-    100% {
-        transform: translateX(0);
-    }
-}
-
 @keyframes introFade {
     0% {
         opacity: 0;
@@ -106,6 +96,16 @@
 
     100% {
         opacity: 1;
+    }
+}
+
+@keyframes introLeft {
+    0% {
+        transform: translateX(3vw);
+    }
+
+    100% {
+        transform: translateX(0);
     }
 }
 
@@ -385,7 +385,7 @@ footer > div {
 }
 
 #welcome > h1 {
-    transform: translateX(2vw);
+    transform: translateX(3vw);
     margin-right: -20px;
     position: relative;
     animation-name: introLeft;
