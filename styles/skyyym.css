@@ -569,7 +569,7 @@ footer > div {
 .archive--gallery {
     /* --n: 5;  the max number of columns */
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
     gap: 0.5rem;
     margin: 0 auto var(--margin__medium) auto;
 
