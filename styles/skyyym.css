@@ -639,6 +639,7 @@ footer > div {
 
 #about > h1 {
     margin-left: -10px;
+    letter-spacing: -15px;
 }
 
 .about--description {
