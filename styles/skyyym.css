@@ -47,7 +47,7 @@
 :root {
     font-size: 16px;
     --font__spacing: 1px;
-    --font__small: 0.875rem/17px;
+    --font__small: 0.9rem/17px;
     --font__medium: clamp(4.5rem, 13vw, 17rem);
     --font__huge: clamp(5rem, 42vw, 50rem);
 
@@ -187,7 +187,6 @@ h4 {
 p {
     color: var(--color__bright);
     font: var(--font__small) var(--ffamily__light);
-    text-transform: uppercase;
     letter-spacing: var(--font__spacing);
     margin: 0;
 }
