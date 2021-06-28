@@ -322,6 +322,9 @@ footer > div {
     align-self: flex-end;
 }
 
+
+/* nav social links */
+
 #nav--social {
     display: flex;
     margin: 0;
@@ -337,9 +340,28 @@ footer > div {
 }
 
 #nav--social li a {
+    position: relative;
     color: var(--color__bright);
     font: var(--font__small) var(--ffamily__light);
     text-decoration: none;
+    transition: var(--transition__fast);
+}
+
+#nav--social li a:hover::after {
+    opacity: 0.5;
+}
+
+#nav--social li a::after {
+    opacity: 0;
+    content: "";
+    position: absolute;
+    top: -1px;
+    right: -15px;
+    width: 13px;
+    height: 13px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 256 256'%3E%3Cpath fill='none' d='M0 0h256v256H0z'/%3E%3Cpath fill='none' stroke='%23b0baaf' stroke-linecap='round' stroke-linejoin='round' stroke-width='16' d='M64 192L192 64M88 64h104v104'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
     transition: var(--transition__fast);
 }
 
