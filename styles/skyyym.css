@@ -60,7 +60,7 @@
     /* --color__accent: rgba(255, 8, 65, 1); */
 
     --margin__small: 5px;
-    --margin__medium: 30px;
+    --margin__medium: 40px;
     --margin__big: 15vh;
 
     --transition__fast: all 0.3s cubic-bezier(.25, .46, .45, .94) 0s;
@@ -533,7 +533,7 @@ footer > div {
 }
 
 .works--link .works--history h3 {
-    padding-top: 10px;
+    padding-top: 20px;
 }
 
 .works--link .works--history p {
