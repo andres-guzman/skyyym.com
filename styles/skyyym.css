@@ -53,7 +53,7 @@
 
     --ffamily__light: "Founders Light", Arial, Helvetica, sans-serif;
     --ffamily__bold: "Founders Semibold", Arial, Helvetica, sans-serif;
-    --ffamily__huge: "Tungsten Condensed", Georgia, serif;
+    --ffamily__huge: "Tungsten Condensed", Arial, Helvetica, sans-serif;
 
     --color__bright: rgba(176, 186, 175, 1);
     --color__half: rgba(176, 186, 175, 0.5);
@@ -135,19 +135,6 @@ body {
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(.22, .61, .36, 1);
 }
-
-/* body intro fade-in */
-
-/* .index {
-    opacity: 0;
-    animation-name: introFade;
-    animation-duration: 1.25s;
-    animation-delay: 0.8s;
-    animation-iteration-count: 1;
-    animation-direction: normal;
-    animation-fill-mode: forwards;
-    animation-timing-function: cubic-bezier(.22, .61, .36, 1);
-} */
 
 
 h1 {

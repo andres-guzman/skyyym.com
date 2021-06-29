@@ -35,6 +35,12 @@
 	<script src="https://unpkg.com/smooth-scrollbar@latest/dist/smooth-scrollbar.js"></script>
 	<script src="../../scripts/skyyym.min.js"></script>
 
+	<script>
+		document.getElementById('archive--close').addEventListener('click', () => {
+			history.back();
+		});
+	</script>
+
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-TMBLMKNTQN"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -42,7 +48,7 @@
         gtag('js', new Date());
 
         gtag('config', 'G-TMBLMKNTQN');
-    </script>
+    </script>	
 
 </body>
 </html>

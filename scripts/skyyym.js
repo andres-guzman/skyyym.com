@@ -134,9 +134,3 @@ const scrollbar = Scrollbar.init(document.querySelector('#outer'), {
 	damping: 0.05, // 0.05
     alwaysShowTracks: true
 });
-
-
-// hisotry back
-document.getElementById('archive--close').addEventListener('click', () => {
-	history.back();
-});
