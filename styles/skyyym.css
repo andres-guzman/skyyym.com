@@ -99,15 +99,7 @@
     }
 }
 
-@keyframes introLeft {
-    0% {
-        transform: translateX(3vw);
-    }
 
-    100% {
-        transform: translateX(0);
-    }
-}
 
 /* ==========================================================================
    Base styles
@@ -147,9 +139,6 @@ body {
     animation-timing-function: cubic-bezier(.22, .61, .36, 1);
 } */
 
-a {
-    background-color: transparent;
-}
 
 h1 {
     color: var(--color__bright);
@@ -277,7 +266,7 @@ nav {
 
 #nav--links li {
     display: inherit;
-    margin-right: 35px;
+    margin-right: 40px;
 }
 
 #nav--links li:last-of-type {
@@ -331,7 +320,7 @@ footer > div {
 }
 
 #nav--social li {
-    margin-right: 35px;
+    margin-right: 40px;
 }
 
 #nav--social li:last-of-type {
@@ -393,6 +382,16 @@ footer > div {
    ========================================================================== */
 
 
+@keyframes introLeft {
+    from {
+        transform: translateX(3vw);
+    }
+
+    to {
+        transform: translateX(0vw);
+    }
+}
+
 #welcome {
     display: flex;
     flex-direction: column;
@@ -436,7 +435,7 @@ footer > div {
     box-sizing: border-box;
     position: relative;
     overflow: hidden;
-    padding: 75px;
+    padding: 0 0 62px 0;
     text-align: center;
 }
 
@@ -624,11 +623,11 @@ footer > div {
 
 
 /* ==========================================================================
-   Section about
+   Section info & contact
    ========================================================================== */
 
 
-#about {
+#info {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -637,12 +636,12 @@ footer > div {
     padding: 0 45px;
 }
 
-#about > h1 {
+#info > h1 {
     margin-left: -10px;
     letter-spacing: -15px;
 }
 
-.about--description {
+.info--description {
     max-width: 430px;
     margin: 0 auto;
     padding: 3vw;
@@ -650,15 +649,15 @@ footer > div {
     transition: var(--transition__medium);
 }
 
-.about--description h3 {
+.info--description h3 {
     margin-bottom: var(--margin__small);
 }
 
-.about--description p {
+.info--description p {
     margin-bottom: var(--margin__medium);
 }
 
-.about--description p:last-of-type {
+.info--description p:last-of-type {
     margin-bottom: 0;
 }
 
@@ -743,16 +742,16 @@ a:visited {
 
 
 @media all and (max-width: 1100px) {
-    #about {
+    #info {
         flex-direction: column;
         padding: 25px;
     }
 
-    #about > h1 {
+    #info > h1 {
         display: none;
     }
 
-    .about--description {
+    .info--description {
         width: auto;
         margin: unset;
         padding: unset;
@@ -842,7 +841,7 @@ a:visited {
         aspect-ratio: 1;
     }
 
-    #about {
+    #info {
         flex-direction: column;
     }
 
