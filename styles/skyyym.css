@@ -99,6 +99,16 @@
     }
 }
 
+@keyframes introLeft {
+    from {
+        transform: translateX(3vw);
+    }
+
+    to {
+        transform: translateX(0vw);
+    }
+}
+
 
 
 /* ==========================================================================
@@ -382,16 +392,6 @@ footer > div {
    ========================================================================== */
 
 
-@keyframes introLeft {
-    from {
-        transform: translateX(3vw);
-    }
-
-    to {
-        transform: translateX(0vw);
-    }
-}
-
 #welcome {
     display: flex;
     flex-direction: column;
@@ -460,11 +460,11 @@ footer > div {
     z-index: -1;
     filter: grayscale(1);
     transition: var(--transition__medium);
-}
+} */
 
 .works--link:hover::before {
     opacity: 0.25;
-} */
+}
 
 /* indivicual colors for each h2 */
 
