@@ -456,6 +456,10 @@ footer > div {
 /* indivicual colors for each h2 */
 
 
+.works--link[href*="mookid.dev"]:hover > h2 {
+    color: #fc446c;
+}
+
 .works--link[href*="badtrash.com"]:hover > h2 {
     color: #9a44fc;
 }
