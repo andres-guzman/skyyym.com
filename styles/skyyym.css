@@ -99,7 +99,7 @@
     }
 }
 
-@keyframes introLeft {
+/* @keyframes introLeft {
     from {
         transform: translateX(3vw);
     }
@@ -107,7 +107,7 @@
     to {
         transform: translateX(0vw);
     }
-}
+} */
 
 
 
@@ -128,8 +128,8 @@ body {
     box-sizing: border-box;
     margin: 0;
     animation-name: introFade;
-    animation-duration: 1.45s;
-    animation-delay: 0.8s;
+    animation-duration: 2s;
+    animation-delay: 0.5s;
     animation-iteration-count: 1;
     animation-direction: normal;
     animation-fill-mode: forwards;
@@ -395,13 +395,13 @@ footer > div {
     /* transform: translateX(3vw); */
     margin-right: -20px;
     position: relative;
-    animation-name: introLeft;
+    /* animation-name: introLeft;
     animation-duration: 1.45s;
     animation-delay: 0.4s;
     animation-iteration-count: 1;
     animation-direction: normal;
     animation-fill-mode: forwards;
-    animation-timing-function: cubic-bezier(.22, .61, .36, 1);
+    animation-timing-function: cubic-bezier(.22, .61, .36, 1); */
 }
 
 
