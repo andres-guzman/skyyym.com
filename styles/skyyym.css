@@ -585,7 +585,7 @@ footer > div {
     background-color: rgba(18, 18, 22, 0);
 }
 
-.archive--gallery__window:hover img {
+.archive--gallery__window:hover picture {
     opacity: 0.3;
 }
 
@@ -597,7 +597,7 @@ footer > div {
     transition: var(--transition__medium);
 }
 
-.archive--gallery__window img {
+.archive--gallery__window picture {
     opacity: 0;
     position: absolute;
     width: auto;
@@ -610,6 +610,11 @@ footer > div {
     z-index: -1;
 }
 
+.archive--gallery__window picture {
+    display: block;
+    width: 100%;
+    object-fit: contain;
+}
 
 
 
@@ -687,7 +692,7 @@ footer > div {
     text-align: center;
 }
 
-#archive--viewer > img {
+.archive--shot img {
     max-width: 100%;
 }
 
