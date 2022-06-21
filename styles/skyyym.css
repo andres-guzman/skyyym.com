@@ -124,7 +124,7 @@ body {
     opacity: 0;
     height: 100%;
     background-color:  rgba(22, 22, 22, 1);
-    /* border: 5px solid var(--color__bright); */
+    border: 6px solid var(--color__bright);
     box-sizing: border-box;
     margin: 0;
     animation-name: introFade;
