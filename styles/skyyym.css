@@ -58,6 +58,7 @@
     --color__bright: rgba(176, 186, 175, 1);
     --color__half: rgba(176, 186, 175, 0.5);
     /* --color__accent: rgba(255, 8, 65, 1); */
+    --color__dark: rgba(22, 22, 22, 1);
 
     --margin__small: 5px;
     --margin__medium: 40px;
@@ -69,7 +70,7 @@
 
 ::selection {
     background: var(--color__bright);
-    color: rgba(22, 22, 22, 1);
+    color: rgba(22, 22, 22, 1); /* rgba(176, 186, 175, 1); */
     text-shadow: none;
 }
 
@@ -123,8 +124,8 @@ html {
 body {
     opacity: 0;
     height: 100%;
-    background-color:  rgba(22, 22, 22, 1);
-    border: 6px solid var(--color__bright);
+    background-color: var(--color__dark);
+    border: 6px solid var(--color__light);
     box-sizing: border-box;
     margin: 0;
     animation-name: introFade;
